@@ -1,0 +1,854 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		458D1A36879B63A234183D59 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03F1FFB16B542AB1591DD73 /* Pods_TestingTechnionRobotComTests.framework */; };
+		5634523DA4A11A38F87BCED5 /* Pods_TestingTechnionRobotCom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D35E692E622E75283969D /* Pods_TestingTechnionRobotCom.framework */; };
+		5CB039D4BBDF6A77355AFF96 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A155E5607DB60033721AC9A7 /* Pods_TestingTechnionRobotComUITests.framework */; };
+		790595721F013B200008A993 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790595711F013B200008A993 /* assets.xcassets */; };
+		790595751F014D7E0008A993 /* UIView+Gestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 790595741F014D7D0008A993 /* UIView+Gestures.m */; };
+		7905957B1F02DA320008A993 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905957A1F02DA320008A993 /* CHCSVParser.m */; };
+		791988EB1F02DE6300C846EA /* CustomCommandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 791988EA1F02DE6300C846EA /* CustomCommandCell.m */; };
+		791988EE1F02DF2000C846EA /* CustomCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 791988ED1F02DF2000C846EA /* CustomCommandVC.m */; };
+		791989981F06665200C846EA /* UIView+InflateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989971F06665200C846EA /* UIView+InflateAnimation.m */; };
+		7919899B1F066DCB00C846EA /* PacketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7919899A1F066DCB00C846EA /* PacketModel.m */; };
+		791E6F551DE1978200E6E431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F541DE1978200E6E431 /* main.m */; };
+		791E6F581DE1978200E6E431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F571DE1978200E6E431 /* AppDelegate.m */; };
+		791E6F5B1DE1978200E6E431 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F5A1DE1978200E6E431 /* MainVC.m */; };
+		791E6F6E1DE1978200E6E431 /* TestingTechnionRobotComTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F6D1DE1978200E6E431 /* TestingTechnionRobotComTests.m */; };
+		791E6F791DE1978200E6E431 /* TestingTechnionRobotComUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F781DE1978200E6E431 /* TestingTechnionRobotComUITests.m */; };
+		7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7974E3FB1E58A2720064F720 /* Main.storyboard */; };
+		7977B9C01EFEDEEB004BBDE5 /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7977B9BF1EFEDEEB004BBDE5 /* Log.m */; };
+		79BFB4511EEFF881005E612D /* UDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFB4501EEFF881005E612D /* UDPManager.m */; };
+		79FF48F71EF99088002D394D /* NetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF48F61EF99088002D394D /* NetworkUtils.m */; };
+		79FF48FA1EF9B5FA002D394D /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF48F91EF9B5FA002D394D /* Coordinates.m */; };
+		79FF4A041EFEA33C002D394D /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A031EFEA33C002D394D /* PlayVC.m */; };
+		79FF4A081EFEA3B9002D394D /* MovementManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A071EFEA3B9002D394D /* MovementManager.m */; };
+		79FF4A0C1EFEAF8B002D394D /* MovementConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A0B1EFEAF8B002D394D /* MovementConsts.m */; };
+		79FF4A121EFEC6F8002D394D /* UIView+ShakeProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		791E6F6A1DE1978200E6E431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 791E6F481DE1978200E6E431 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 791E6F4F1DE1978200E6E431;
+			remoteInfo = TestingTechnionRobotCom;
+		};
+		791E6F751DE1978200E6E431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 791E6F481DE1978200E6E431 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 791E6F4F1DE1978200E6E431;
+			remoteInfo = TestingTechnionRobotCom;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27506001132A3A0AECB5292B /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		294D35E692E622E75283969D /* Pods_TestingTechnionRobotCom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotCom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FFBE4781C399FCDB6164941 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests.debug.xcconfig"; sourceTree = "<group>"; };
+		790595711F013B200008A993 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		790595731F014D7D0008A993 /* UIView+Gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gestures.h"; sourceTree = "<group>"; };
+		790595741F014D7D0008A993 /* UIView+Gestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gestures.m"; sourceTree = "<group>"; };
+		790595761F014E6E0008A993 /* GestureProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureProtocol.h; sourceTree = "<group>"; };
+		790595791F02DA320008A993 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		7905957A1F02DA320008A993 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		791988E91F02DE6300C846EA /* CustomCommandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCommandCell.h; sourceTree = "<group>"; };
+		791988EA1F02DE6300C846EA /* CustomCommandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCommandCell.m; sourceTree = "<group>"; };
+		791988EC1F02DF2000C846EA /* CustomCommandVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCommandVC.h; sourceTree = "<group>"; };
+		791988ED1F02DF2000C846EA /* CustomCommandVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCommandVC.m; sourceTree = "<group>"; };
+		791989961F06665200C846EA /* UIView+InflateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InflateAnimation.h"; sourceTree = "<group>"; };
+		791989971F06665200C846EA /* UIView+InflateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InflateAnimation.m"; sourceTree = "<group>"; };
+		791989991F066DCB00C846EA /* PacketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketModel.h; sourceTree = "<group>"; };
+		7919899A1F066DCB00C846EA /* PacketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketModel.m; sourceTree = "<group>"; };
+		791E6F501DE1978200E6E431 /* TestingTechnionRobotCom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingTechnionRobotCom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		791E6F541DE1978200E6E431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		791E6F561DE1978200E6E431 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		791E6F571DE1978200E6E431 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		791E6F591DE1978200E6E431 /* MainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		791E6F5A1DE1978200E6E431 /* MainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		791E6F641DE1978200E6E431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		791E6F691DE1978200E6E431 /* TestingTechnionRobotComTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingTechnionRobotComTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		791E6F6D1DE1978200E6E431 /* TestingTechnionRobotComTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingTechnionRobotComTests.m; sourceTree = "<group>"; };
+		791E6F6F1DE1978200E6E431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		791E6F741DE1978200E6E431 /* TestingTechnionRobotComUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingTechnionRobotComUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		791E6F781DE1978200E6E431 /* TestingTechnionRobotComUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingTechnionRobotComUITests.m; sourceTree = "<group>"; };
+		791E6F7A1DE1978200E6E431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7974E3FB1E58A2720064F720 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7977B9BE1EFEDEEB004BBDE5 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		7977B9BF1EFEDEEB004BBDE5 /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
+		79BFB44F1EEFF881005E612D /* UDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPManager.h; sourceTree = "<group>"; };
+		79BFB4501EEFF881005E612D /* UDPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPManager.m; sourceTree = "<group>"; };
+		79FF48F51EF99088002D394D /* NetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtils.h; sourceTree = "<group>"; };
+		79FF48F61EF99088002D394D /* NetworkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtils.m; sourceTree = "<group>"; };
+		79FF48F81EF9B5FA002D394D /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		79FF48F91EF9B5FA002D394D /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
+		79FF4A021EFEA33C002D394D /* PlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVC.h; sourceTree = "<group>"; };
+		79FF4A031EFEA33C002D394D /* PlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVC.m; sourceTree = "<group>"; };
+		79FF4A061EFEA3B9002D394D /* MovementManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementManager.h; sourceTree = "<group>"; };
+		79FF4A071EFEA3B9002D394D /* MovementManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovementManager.m; sourceTree = "<group>"; };
+		79FF4A0A1EFEAF8B002D394D /* MovementConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementConsts.h; sourceTree = "<group>"; };
+		79FF4A0B1EFEAF8B002D394D /* MovementConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovementConsts.m; sourceTree = "<group>"; };
+		79FF4A0E1EFEC65A002D394D /* ShakeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeProtocol.h; sourceTree = "<group>"; };
+		79FF4A101EFEC6F8002D394D /* UIView+ShakeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ShakeProtocol.h"; sourceTree = "<group>"; };
+		79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ShakeProtocol.m"; sourceTree = "<group>"; };
+		80B9130556C6AB5AE530C37B /* Pods-TestingTechnionRobotCom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.release.xcconfig"; sourceTree = "<group>"; };
+		9EBEF6E0173175E7D3DA8E87 /* Pods-TestingTechnionRobotCom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.debug.xcconfig"; sourceTree = "<group>"; };
+		A155E5607DB60033721AC9A7 /* Pods_TestingTechnionRobotComUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C274F6F88F9A27FEAE25C0 /* Pods-TestingTechnionRobotComTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests.release.xcconfig"; sourceTree = "<group>"; };
+		E03F1FFB16B542AB1591DD73 /* Pods_TestingTechnionRobotComTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBAE04F48FEC0925318A9246 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		791E6F4D1DE1978200E6E431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5634523DA4A11A38F87BCED5 /* Pods_TestingTechnionRobotCom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		791E6F661DE1978200E6E431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458D1A36879B63A234183D59 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		791E6F711DE1978200E6E431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CB039D4BBDF6A77355AFF96 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F6FA20B84F9076C9EAE977A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EBEF6E0173175E7D3DA8E87 /* Pods-TestingTechnionRobotCom.debug.xcconfig */,
+				80B9130556C6AB5AE530C37B /* Pods-TestingTechnionRobotCom.release.xcconfig */,
+				3FFBE4781C399FCDB6164941 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */,
+				D7C274F6F88F9A27FEAE25C0 /* Pods-TestingTechnionRobotComTests.release.xcconfig */,
+				27506001132A3A0AECB5292B /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */,
+				EBAE04F48FEC0925318A9246 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		791E6F471DE1978200E6E431 = {
+			isa = PBXGroup;
+			children = (
+				791E6F521DE1978200E6E431 /* TestingTechnionRobotCom */,
+				791E6F6C1DE1978200E6E431 /* TestingTechnionRobotComTests */,
+				791E6F771DE1978200E6E431 /* TestingTechnionRobotComUITests */,
+				791E6F511DE1978200E6E431 /* Products */,
+				1F6FA20B84F9076C9EAE977A /* Pods */,
+				B3560ED354C937E75145A7C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		791E6F511DE1978200E6E431 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				791E6F501DE1978200E6E431 /* TestingTechnionRobotCom.app */,
+				791E6F691DE1978200E6E431 /* TestingTechnionRobotComTests.xctest */,
+				791E6F741DE1978200E6E431 /* TestingTechnionRobotComUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		791E6F521DE1978200E6E431 /* TestingTechnionRobotCom */ = {
+			isa = PBXGroup;
+			children = (
+				79FF4A0F1EFEC6C9002D394D /* Extenstion */,
+				79FF4A0D1EFEC64B002D394D /* Protocols */,
+				79FF4A091EFEAF73002D394D /* Utils */,
+				79FF4A051EFEA38D002D394D /* Movement */,
+				79FF4A011EFEA2D1002D394D /* Resources */,
+				79FF4A001EFEA2CA002D394D /* View */,
+				79FF48FF1EF9BA67002D394D /* Controller */,
+				79FF48FD1EF9B676002D394D /* Network */,
+				791E6F531DE1978200E6E431 /* Supporting Files */,
+			);
+			path = TestingTechnionRobotCom;
+			sourceTree = "<group>";
+		};
+		791E6F531DE1978200E6E431 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				791E6F541DE1978200E6E431 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		791E6F6C1DE1978200E6E431 /* TestingTechnionRobotComTests */ = {
+			isa = PBXGroup;
+			children = (
+				791E6F6D1DE1978200E6E431 /* TestingTechnionRobotComTests.m */,
+				791E6F6F1DE1978200E6E431 /* Info.plist */,
+			);
+			path = TestingTechnionRobotComTests;
+			sourceTree = "<group>";
+		};
+		791E6F771DE1978200E6E431 /* TestingTechnionRobotComUITests */ = {
+			isa = PBXGroup;
+			children = (
+				791E6F781DE1978200E6E431 /* TestingTechnionRobotComUITests.m */,
+				791E6F7A1DE1978200E6E431 /* Info.plist */,
+			);
+			path = TestingTechnionRobotComUITests;
+			sourceTree = "<group>";
+		};
+		79FF48FD1EF9B676002D394D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				79FF48F51EF99088002D394D /* NetworkUtils.h */,
+				79FF48F61EF99088002D394D /* NetworkUtils.m */,
+				79BFB44F1EEFF881005E612D /* UDPManager.h */,
+				79BFB4501EEFF881005E612D /* UDPManager.m */,
+				791989991F066DCB00C846EA /* PacketModel.h */,
+				7919899A1F066DCB00C846EA /* PacketModel.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		79FF48FF1EF9BA67002D394D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				791E6F5A1DE1978200E6E431 /* MainVC.m */,
+				791E6F591DE1978200E6E431 /* MainVC.h */,
+				79FF4A021EFEA33C002D394D /* PlayVC.h */,
+				79FF4A031EFEA33C002D394D /* PlayVC.m */,
+				791E6F561DE1978200E6E431 /* AppDelegate.h */,
+				791E6F571DE1978200E6E431 /* AppDelegate.m */,
+				791988EC1F02DF2000C846EA /* CustomCommandVC.h */,
+				791988ED1F02DF2000C846EA /* CustomCommandVC.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		79FF4A001EFEA2CA002D394D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7974E3FB1E58A2720064F720 /* Main.storyboard */,
+				791988E91F02DE6300C846EA /* CustomCommandCell.h */,
+				791988EA1F02DE6300C846EA /* CustomCommandCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		79FF4A011EFEA2D1002D394D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				791E6F641DE1978200E6E431 /* Info.plist */,
+				790595711F013B200008A993 /* assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		79FF4A051EFEA38D002D394D /* Movement */ = {
+			isa = PBXGroup;
+			children = (
+				79FF48F81EF9B5FA002D394D /* Coordinates.h */,
+				79FF48F91EF9B5FA002D394D /* Coordinates.m */,
+				79FF4A0A1EFEAF8B002D394D /* MovementConsts.h */,
+				79FF4A0B1EFEAF8B002D394D /* MovementConsts.m */,
+				79FF4A061EFEA3B9002D394D /* MovementManager.h */,
+				79FF4A071EFEA3B9002D394D /* MovementManager.m */,
+			);
+			name = Movement;
+			sourceTree = "<group>";
+		};
+		79FF4A091EFEAF73002D394D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				790595791F02DA320008A993 /* CHCSVParser.h */,
+				7905957A1F02DA320008A993 /* CHCSVParser.m */,
+				7977B9BE1EFEDEEB004BBDE5 /* Log.h */,
+				7977B9BF1EFEDEEB004BBDE5 /* Log.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		79FF4A0D1EFEC64B002D394D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79FF4A0E1EFEC65A002D394D /* ShakeProtocol.h */,
+				790595761F014E6E0008A993 /* GestureProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		79FF4A0F1EFEC6C9002D394D /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				79FF4A101EFEC6F8002D394D /* UIView+ShakeProtocol.h */,
+				79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */,
+				790595731F014D7D0008A993 /* UIView+Gestures.h */,
+				790595741F014D7D0008A993 /* UIView+Gestures.m */,
+				791989961F06665200C846EA /* UIView+InflateAnimation.h */,
+				791989971F06665200C846EA /* UIView+InflateAnimation.m */,
+			);
+			name = Extenstion;
+			sourceTree = "<group>";
+		};
+		B3560ED354C937E75145A7C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				294D35E692E622E75283969D /* Pods_TestingTechnionRobotCom.framework */,
+				E03F1FFB16B542AB1591DD73 /* Pods_TestingTechnionRobotComTests.framework */,
+				A155E5607DB60033721AC9A7 /* Pods_TestingTechnionRobotComUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		791E6F4F1DE1978200E6E431 /* TestingTechnionRobotCom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 791E6F7D1DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotCom" */;
+			buildPhases = (
+				6DDBC48D86AA7EEAB83EBFB6 /* [CP] Check Pods Manifest.lock */,
+				791E6F4C1DE1978200E6E431 /* Sources */,
+				791E6F4D1DE1978200E6E431 /* Frameworks */,
+				791E6F4E1DE1978200E6E431 /* Resources */,
+				C6A6946BC7B78F976FA69B1F /* [CP] Embed Pods Frameworks */,
+				E0B536E1E1730D6F67552AFA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestingTechnionRobotCom;
+			productName = TestingTechnionRobotCom;
+			productReference = 791E6F501DE1978200E6E431 /* TestingTechnionRobotCom.app */;
+			productType = "com.apple.product-type.application";
+		};
+		791E6F681DE1978200E6E431 /* TestingTechnionRobotComTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 791E6F801DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotComTests" */;
+			buildPhases = (
+				BBFA17056732D696A9FB54A4 /* [CP] Check Pods Manifest.lock */,
+				791E6F651DE1978200E6E431 /* Sources */,
+				791E6F661DE1978200E6E431 /* Frameworks */,
+				791E6F671DE1978200E6E431 /* Resources */,
+				90F342A96B331E0E2EF22585 /* [CP] Embed Pods Frameworks */,
+				D7AD14A693988DC19EF2778F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				791E6F6B1DE1978200E6E431 /* PBXTargetDependency */,
+			);
+			name = TestingTechnionRobotComTests;
+			productName = TestingTechnionRobotComTests;
+			productReference = 791E6F691DE1978200E6E431 /* TestingTechnionRobotComTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		791E6F731DE1978200E6E431 /* TestingTechnionRobotComUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 791E6F831DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotComUITests" */;
+			buildPhases = (
+				57A5F1530897861949E805DB /* [CP] Check Pods Manifest.lock */,
+				791E6F701DE1978200E6E431 /* Sources */,
+				791E6F711DE1978200E6E431 /* Frameworks */,
+				791E6F721DE1978200E6E431 /* Resources */,
+				C7621FED6989E3AA7C5532BB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				791E6F761DE1978200E6E431 /* PBXTargetDependency */,
+			);
+			name = TestingTechnionRobotComUITests;
+			productName = TestingTechnionRobotComUITests;
+			productReference = 791E6F741DE1978200E6E431 /* TestingTechnionRobotComUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		791E6F481DE1978200E6E431 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Yaniv;
+				TargetAttributes = {
+					791E6F4F1DE1978200E6E431 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 95GPBW627H;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					791E6F681DE1978200E6E431 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 791E6F4F1DE1978200E6E431;
+					};
+					791E6F731DE1978200E6E431 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 791E6F4F1DE1978200E6E431;
+					};
+				};
+			};
+			buildConfigurationList = 791E6F4B1DE1978200E6E431 /* Build configuration list for PBXProject "TestingTechnionRobotCom" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 791E6F471DE1978200E6E431;
+			productRefGroup = 791E6F511DE1978200E6E431 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				791E6F4F1DE1978200E6E431 /* TestingTechnionRobotCom */,
+				791E6F681DE1978200E6E431 /* TestingTechnionRobotComTests */,
+				791E6F731DE1978200E6E431 /* TestingTechnionRobotComUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		791E6F4E1DE1978200E6E431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				790595721F013B200008A993 /* assets.xcassets in Resources */,
+				7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		791E6F671DE1978200E6E431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		791E6F721DE1978200E6E431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57A5F1530897861949E805DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6DDBC48D86AA7EEAB83EBFB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90F342A96B331E0E2EF22585 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBFA17056732D696A9FB54A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6A6946BC7B78F976FA69B1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7621FED6989E3AA7C5532BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7AD14A693988DC19EF2778F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0B536E1E1730D6F67552AFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		791E6F4C1DE1978200E6E431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7977B9C01EFEDEEB004BBDE5 /* Log.m in Sources */,
+				791988EB1F02DE6300C846EA /* CustomCommandCell.m in Sources */,
+				7919899B1F066DCB00C846EA /* PacketModel.m in Sources */,
+				791988EE1F02DF2000C846EA /* CustomCommandVC.m in Sources */,
+				791E6F5B1DE1978200E6E431 /* MainVC.m in Sources */,
+				79FF4A041EFEA33C002D394D /* PlayVC.m in Sources */,
+				79FF4A081EFEA3B9002D394D /* MovementManager.m in Sources */,
+				791E6F581DE1978200E6E431 /* AppDelegate.m in Sources */,
+				79FF48F71EF99088002D394D /* NetworkUtils.m in Sources */,
+				79FF4A0C1EFEAF8B002D394D /* MovementConsts.m in Sources */,
+				79FF48FA1EF9B5FA002D394D /* Coordinates.m in Sources */,
+				791E6F551DE1978200E6E431 /* main.m in Sources */,
+				791989981F06665200C846EA /* UIView+InflateAnimation.m in Sources */,
+				7905957B1F02DA320008A993 /* CHCSVParser.m in Sources */,
+				79BFB4511EEFF881005E612D /* UDPManager.m in Sources */,
+				790595751F014D7E0008A993 /* UIView+Gestures.m in Sources */,
+				79FF4A121EFEC6F8002D394D /* UIView+ShakeProtocol.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		791E6F651DE1978200E6E431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791E6F6E1DE1978200E6E431 /* TestingTechnionRobotComTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		791E6F701DE1978200E6E431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791E6F791DE1978200E6E431 /* TestingTechnionRobotComUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		791E6F6B1DE1978200E6E431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 791E6F4F1DE1978200E6E431 /* TestingTechnionRobotCom */;
+			targetProxy = 791E6F6A1DE1978200E6E431 /* PBXContainerItemProxy */;
+		};
+		791E6F761DE1978200E6E431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 791E6F4F1DE1978200E6E431 /* TestingTechnionRobotCom */;
+			targetProxy = 791E6F751DE1978200E6E431 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		791E6F7B1DE1978200E6E431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"NETWORK_LOGS=${NETWORK_LOGS}",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				NETWORK_LOGS = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		791E6F7C1DE1978200E6E431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				NETWORK_LOGS = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		791E6F7E1DE1978200E6E431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EBEF6E0173175E7D3DA8E87 /* Pods-TestingTechnionRobotCom.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
+				DEVELOPMENT_TEAM = 95GPBW627H;
+				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TechnionTest.TestingTechnionRobotCom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		791E6F7F1DE1978200E6E431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B9130556C6AB5AE530C37B /* Pods-TestingTechnionRobotCom.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
+				DEVELOPMENT_TEAM = 95GPBW627H;
+				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TechnionTest.TestingTechnionRobotCom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		791E6F811DE1978200E6E431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FFBE4781C399FCDB6164941 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TestingTechnionRobotComTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestPush.TestingTechnionRobotComTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestingTechnionRobotCom.app/TestingTechnionRobotCom";
+			};
+			name = Debug;
+		};
+		791E6F821DE1978200E6E431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7C274F6F88F9A27FEAE25C0 /* Pods-TestingTechnionRobotComTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TestingTechnionRobotComTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestPush.TestingTechnionRobotComTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestingTechnionRobotCom.app/TestingTechnionRobotCom";
+			};
+			name = Release;
+		};
+		791E6F841DE1978200E6E431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27506001132A3A0AECB5292B /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TestingTechnionRobotComUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestPush.TestingTechnionRobotComUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TestingTechnionRobotCom;
+			};
+			name = Debug;
+		};
+		791E6F851DE1978200E6E431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBAE04F48FEC0925318A9246 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TestingTechnionRobotComUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestPush.TestingTechnionRobotComUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TestingTechnionRobotCom;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		791E6F4B1DE1978200E6E431 /* Build configuration list for PBXProject "TestingTechnionRobotCom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				791E6F7B1DE1978200E6E431 /* Debug */,
+				791E6F7C1DE1978200E6E431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		791E6F7D1DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotCom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				791E6F7E1DE1978200E6E431 /* Debug */,
+				791E6F7F1DE1978200E6E431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		791E6F801DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotComTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				791E6F811DE1978200E6E431 /* Debug */,
+				791E6F821DE1978200E6E431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		791E6F831DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotComUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				791E6F841DE1978200E6E431 /* Debug */,
+				791E6F851DE1978200E6E431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 791E6F481DE1978200E6E431 /* Project object */;
+}
