@@ -22,9 +22,9 @@
 
 @property (nonatomic, weak) id<MovementIdentifierDelegate> delegate;
 
-+(instancetype)shared;
+-(instancetype)init;
 
-+(void)start;
-+(void)stop;
+-(void)start;
+-(void)stop;
 
 @end

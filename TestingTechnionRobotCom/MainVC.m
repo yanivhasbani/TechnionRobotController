@@ -111,8 +111,8 @@
     NSString *buttonText = sender.titleLabel.text;
     if ([buttonText.lowercaseString containsString:@"gyro"]) {
       v.segueData = UITypeGyro;
-    } else if ([buttonText.lowercaseString containsString:@"swipe"]) {
-      v.segueData = UITypeSwipe;
+    } else if ([buttonText.lowercaseString containsString:@"joy"]) {
+      v.segueData = UITypeJoystick;
     }
     
     v.udpPort = _portNumber.text;

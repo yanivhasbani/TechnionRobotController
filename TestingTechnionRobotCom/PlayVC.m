@@ -42,6 +42,8 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
 
 @end
 
+static UIType savedSate;
+
 @implementation PlayVC
 @synthesize uiType = _uiType;
 -(UIType)uiType {
@@ -55,7 +57,7 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
     [self.view removeTapGestures];
     self.view.gestureDelegate = nil;
     [self startGyro];
-  } else if (type == UITypeSwipe) {
+  } else if (type == UITypeJoystick) {
     [self stopGyro];
     [self.view addSwipeGestures];
     self.view.gestureDelegate = self;
@@ -83,7 +85,8 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   _uiType = type;
 }
 
-
+#pragma mark -
+#pragma mark Lifecycle
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -93,9 +96,29 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   
   self.uiType = _segueData;
   
+  [_uiSegment setSelectedSegmentIndex:(self.uiType - 1)];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  if (savedSate != UITypeGyroNone) {
+    self.uiType = savedSate;
+  }
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+  if (_uiType == UITypeGyro) {
+    //Start Gyro measurement
+    [self stopGyro];
+  } else if (_uiType == UITypeJoystick) {
+    [self.view removeSwipeGestures];
+    [self.view removeTapGestures];
+    self.view.gestureDelegate = nil;;
+  }
   
+  savedSate = _uiType;
   
-  [_uiSegment setSelectedSegmentIndex:self.uiType];
+  [super viewWillDisappear:animated];
 }
 
 
@@ -351,7 +374,7 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   if (_uiSegment.selectedSegmentIndex == 0) {
     self.uiType = UITypeGyro;
   } else if (_uiSegment.selectedSegmentIndex == 1) {
-    self.uiType = UITypeSwipe;
+    self.uiType = UITypeJoystick;
   }
 }
 

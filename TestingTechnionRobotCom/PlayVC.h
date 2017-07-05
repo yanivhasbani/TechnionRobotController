@@ -11,8 +11,9 @@
 @interface PlayVC : UIViewController
 
 typedef NS_ENUM(NSUInteger, UIType) {
-  UITypeGyro,
-  UITypeSwipe
+  UITypeGyroNone = 0,
+  UITypeGyro = 1,
+  UITypeJoystick = 2
 };
 
 @property (nonatomic, assign) UIType segueData;

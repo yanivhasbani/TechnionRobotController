@@ -13,6 +13,7 @@
 
 //int =  SateliteCommand
 @property (nonatomic, strong) NSNumber *lastMove;
+@property (nonatomic, strong) MovementIdentifier *movementIdentifier;
 
 @end
 
@@ -29,13 +30,14 @@ static MovementManager* movementManager;
 }
 
 -(void)start {
-  [MovementIdentifier shared].delegate = self;
-  [MovementIdentifier start];
+  _movementIdentifier = [MovementIdentifier new];
+  _movementIdentifier.delegate = self;
+  [_movementIdentifier start];
 }
 
 -(void)stop {
-  [MovementIdentifier stop];
-  [MovementIdentifier shared].delegate = nil;
+  [_movementIdentifier stop];
+  _movementIdentifier = nil;
 }
 
 

@@ -22,22 +22,12 @@ static MovementIdentifier* sharedMovementIdentifier;
 const float gyroInterval = 0.25f;
 const float threshold = 0.9f;
 
-+(instancetype)shared {
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    sharedMovementIdentifier = [MovementIdentifier new];
-    sharedMovementIdentifier.motionManager = [[CMMotionManager alloc] init];
-  });
+-(instancetype)init {
+  self = [super init];
   
-  return sharedMovementIdentifier;
-}
-
-+(void)start {
-  [sharedMovementIdentifier start];
-}
-
-+(void)stop {
-  [sharedMovementIdentifier stop];
+  _motionManager = [[CMMotionManager alloc] init];
+  
+  return self;
 }
 
 -(void)start {
@@ -53,8 +43,9 @@ const float threshold = 0.9f;
       /* Add on a handler block object */
       
       /* Receive the gyroscope data on this block */
+      __weak MovementIdentifier *weakSelf = self;
       [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData * _Nullable accData, NSError * _Nullable error) {
-          [self handleMovement:accData.acceleration.x y:accData.acceleration.y];
+          [weakSelf handleMovement:accData.acceleration.x y:accData.acceleration.y];
         }
       ];
     }
@@ -66,7 +57,8 @@ const float threshold = 0.9f;
 }
 
 -(void)stop {
-  [self.motionManager stopAccelerometerUpdates];
+  [_motionManager stopAccelerometerUpdates];
+  _motionManager = nil;
 }
 
 -(void)handleMovement:(double)x y:(double)y {
@@ -85,7 +77,7 @@ const float threshold = 0.9f;
       [self.delegate D];
     }
     
-    [self.motionManager stopAccelerometerUpdates];
+    [_motionManager stopAccelerometerUpdates];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
       [self start];
     });
@@ -101,9 +93,10 @@ const float threshold = 0.9f;
       [self.delegate R];
     }
     
-    [self.motionManager stopAccelerometerUpdates];
+    [_motionManager stopAccelerometerUpdates];
+    __weak MovementIdentifier *weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-      [self start];
+      [weakSelf start];
     });
   }
 }
