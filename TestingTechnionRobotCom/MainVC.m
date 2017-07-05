@@ -7,14 +7,12 @@
 //
 
 #import <CoreFoundation/CoreFoundation.h>
-
-#import "NetworkUtils.h"
-#import "UDPManager.h"
-#import "MainVC.h"
-#import "Coordinates.h"
-#import "MovementManager.h"
-#import "PlayVC.h"
 #include <arpa/inet.h>
+
+#import "MainVC.h"
+#import "PlayVC.h"
+#import "UIAlertController+MyAlertController.h"
+
 
 @implementation NSString (IPValidation)
 
@@ -52,7 +50,7 @@
 @property (nonatomic, assign) NSInteger retryConnection;
 @property (strong, nonatomic) IBOutlet UITextField *ipAddress;
 @property (strong, nonatomic) IBOutlet UITextField *portNumber;
-@property (strong, nonatomic) IBOutlet UITextField *robotNumber;
+@property (strong, nonatomic) IBOutlet UITextField *sateliteNumber;
 
 @end
 
@@ -64,6 +62,8 @@
   _ipAddress.delegate = self;
   _portNumber.returnKeyType = UIReturnKeyDone;
   _portNumber.delegate = self;
+  _sateliteNumber.returnKeyType = UIReturnKeyDone;
+  _sateliteNumber.delegate = self;
   
   NSString *ipAddr = [[NSUserDefaults standardUserDefaults] objectForKey:@"myIPAddress"];
   if (ipAddr) {
@@ -74,27 +74,26 @@
   if (ipAddr) {
     _portNumber.text = udpPort;
   }
+  
+  NSString *sateliteNumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"mySateliteNumber"];
+  if (sateliteNumber) {
+    _sateliteNumber.text = sateliteNumber;
+  }
 }
 
 - (IBAction)uiPressed:(UIButton *)sender {
   if (!_ipAddress.text || [_ipAddress.text isEqualToString:@""]||  ![_ipAddress.text isValidIPAddress] ||
       !_portNumber.text || [_portNumber.text isEqualToString:@""] || ![_portNumber.text isValidUDPPort] ||
-      !_robotNumber.text || [_robotNumber.text isEqualToString:@""] || [_robotNumber.text isValidRobot]) {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Incorrect UDP connection data"
-                                                                             message:@"Please fill in a valid ip address and UDP port"
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    //We add buttons to the alert controller by creating UIAlertActions:
-    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
-    [alertController addAction:actionOk];
-    [self presentViewController:alertController animated:YES completion:nil];
+      !_sateliteNumber.text || [_sateliteNumber.text isEqualToString:@""] || ![_sateliteNumber.text isValidRobot]) {
+    UIAlertController *a = [UIAlertController newWithTitle:@"Incorrect UDP connection data"
+                                                   message:@"Please fill in a valid ip address, UDP port and robot number"];
+    [self presentViewController:a animated:YES completion:nil];
     return;
   }
   
   [[NSUserDefaults standardUserDefaults] setObject:_ipAddress.text forKey:@"myIPAddress"];
   [[NSUserDefaults standardUserDefaults] setObject:_portNumber.text forKey:@"myUDPPort"];
-  [[NSUserDefaults standardUserDefaults] setObject:_robotNumber.text forKey:@"myRoboNumber"];
+  [[NSUserDefaults standardUserDefaults] setObject:_sateliteNumber.text forKey:@"mySateliteNumber"];
   
   [self performSegueWithIdentifier:@"PlayVC" sender:sender];
 }
@@ -118,14 +117,8 @@
     
     v.udpPort = _portNumber.text;
     v.ipAddress = _ipAddress.text;
-    v.robotNumber = @(_robotNumber.text.integerValue);
+    v.sateliteNumber = @(_sateliteNumber.text.integerValue);
   }
-}
-
-- (IBAction)resetPressed:(UIButton *)sender {
-  sender.hidden = YES;
-  
-  [self performSegueWithIdentifier:@"PlayVC" sender:nil];
 }
 
 @end

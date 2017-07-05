@@ -13,6 +13,8 @@
 #import "UIView+ShakeProtocol.h"
 #import "UIView+Gestures.h"
 #import "UIView+InflateAnimation.h"
+#import "SendPacketModel.h"
+#import "CustomCommandVC.h"
 
 typedef NS_ENUM(NSUInteger, ButtonType) {
   ButtonTypeUp,
@@ -34,7 +36,6 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
 @property (strong, nonatomic) IBOutlet UIButton *rightArrow;
 @property (strong, nonatomic) IBOutlet UIButton *rotateLeft;
 @property (strong, nonatomic) IBOutlet UIButton *rotateRight;
-
 @property (strong, nonatomic) IBOutlet UIButton *redButtonImage;
 
 @property (nonatomic, assign) UIType uiType;
@@ -65,7 +66,7 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   [_rotateRight addHoldGesture];
   _rotateRight.gestureDelegate = self;
   _rotateLeft.gestureDelegate = self;
-
+  
   [_leftArrow addHoldGesture];
   _leftArrow.gestureDelegate = self;
   [_rightArrow addHoldGesture];
@@ -104,37 +105,40 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
 -(void)openUDPConnection {
   static NSInteger retryCounter = 0;
   dispatch_async(dispatch_get_global_queue(0, 0), ^{
-    [[UDPManager sharedManager] openConnectionForData:_ipAddress
-                                              udpPort:_udpPort
-                                         intervalTime:@(0.5)
-                                           completion:^(NSError * err) {
-      if (err) {
-        NSLog(@"Error in opening connection. err = %@", err);
-        retryCounter++;
-        if (retryCounter < _retryConnection) {
-          return [self openUDPConnection];
-        }
-      } else {
-        //First command sent is stop
-        [self sendNextCommandToSatelite:SateliteCommandStop];
-      }
-    }];
+    [UDPManager openConnectionForData:_ipAddress
+                              udpPort:_udpPort
+                         intervalTime:@(0.5)
+                           completion:^(NSError * err) {
+                             if (err) {
+                               NSLog(@"Error in opening connection. err = %@", err);
+                               retryCounter++;
+                               if (retryCounter < _retryConnection) {
+                                 return [self openUDPConnection];
+                               }
+                             } else {
+                               //First command sent is stop
+                               [self sendNextCommandToSatelite:SateliteCommandStop];
+                             }
+                           }];
   });
 }
 
 //API
--(NSString *)receiveNextDataFromSatelite {
-  NSString *baseCmd = [[UDPManager sharedManager] getPacket];
-  NSLog(@"Got cmd from base. cmd = %@", baseCmd);
-  
-  return baseCmd;
-}
+//-(NSString *)receiveNextDataFromSatelite {
+//  NSString *baseCmd = [UDPManager getPacket];
+//  NSLog(@"Got cmd from base. cmd = %@", baseCmd);
+//  
+//  return baseCmd;
+//}
 
 -(void)sendNextCommandToSatelite:(SateliteCommand)cmd {
-  NSLog(@"Next CMD = %@", cmdToString(cmd));
-  [[UDPManager sharedManager] sendPacket:cmdToString(cmd)];
+  SendPacketModel *p = [SendPacketModel newWithMessage:cmdToString(cmd) sateliteNumber:_sateliteNumber];
+  [UDPManager  sendPacket:p];
 }
 
+
+#pragma mark -
+#pragma mark UI Manipulation
 -(void)removeAllAnimations {
   [UIView animateWithDuration:0.4 animations:^{
     [_leftArrow.layer removeAllAnimations];
@@ -152,7 +156,7 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
     _rotateLeft.hidden = NO;
     _rotateRight.hidden = NO;
     _leftArrow.hidden = NO;
-//    _redButtonImage.hidden = YES;
+    //    _redButtonImage.hidden = YES;
   }];
 }
 
@@ -163,8 +167,8 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   _rotateLeft.hidden = YES;
   _rotateRight.hidden = YES;
   _leftArrow.hidden = YES;
-//  _redButtonImage.hidden = NO;
-//  [_redButtonImage inflateDeflate];
+  //  _redButtonImage.hidden = NO;
+  //  [_redButtonImage inflateDeflate];
   
   switch (excludedButton) {
     case ButtonTypeUp:
@@ -196,44 +200,44 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   [self.view addTapGestures];
   [self.view removeSwipeGestures];
   
-//  [self hideButtonsExcept:ButtonTypeLeft];
+  //  [self hideButtonsExcept:ButtonTypeLeft];
   
   [self sendNextCommandToSatelite:SateliteCommandLeft];
   
-//  [_leftArrow shakeLeftArrow];
+  //  [_leftArrow shakeLeftArrow];
 }
 
 -(void)swipeLeft {
   [self.view addTapGestures];
   [self.view removeSwipeGestures];
   
-//  [self hideButtonsExcept:ButtonTypeRight];
+  //  [self hideButtonsExcept:ButtonTypeRight];
   
   [self sendNextCommandToSatelite:SateliteCommandRight];
   
-//  [_rightArrow shakeRightArrow];
+  //  [_rightArrow shakeRightArrow];
 }
 
 -(void)swipeUp {
   [self.view addTapGestures];
   [self.view removeSwipeGestures];
   
-//  [self hideButtonsExcept:ButtonTypeUp];
+  //  [self hideButtonsExcept:ButtonTypeUp];
   
   [self sendNextCommandToSatelite:SateliteCommandUp];
   
-//  [_upArrow shakeUpArrow];
+  //  [_upArrow shakeUpArrow];
 }
 
 -(void)swipeDown {
   [self.view addTapGestures];
   [self.view removeSwipeGestures];
   
-//  [self hideButtonsExcept:ButtonTypeDown];
+  //  [self hideButtonsExcept:ButtonTypeDown];
   
   [self sendNextCommandToSatelite:SateliteCommandDown];
   
-//  [_downArrow shakeDownArrow];
+  //  [_downArrow shakeDownArrow];
 }
 
 -(void)handleSingleTap:(UIView *)view {
@@ -351,6 +355,14 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   }
 }
 
+#pragma mark -
+#pragma mark CustomCommandVC display
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSNumber *)sender {
+  if ([segue.destinationViewController isKindOfClass:[CustomCommandVC class]]) {
+    CustomCommandVC *ccvc = (CustomCommandVC *)segue.destinationViewController;
+    ccvc.sateliteNumber = _sateliteNumber;
+  }
+}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches
            withEvent:(UIEvent *)event {
@@ -358,9 +370,12 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
   if ([touch view] == self.view && touches.count > 1)
   {
     //More than two finger touched the screen, load configurator
-    [self performSegueWithIdentifier:@"CustomCommandVC" sender:nil];
+    [self performSegueWithIdentifier:@"CustomCommandVC" sender:_sateliteNumber];
   }
 }
+
+#pragma mark -
+#pragma mark LocationVC display
 
 
 @end

@@ -40,9 +40,8 @@ static NSTimer *timer;
 }
 
 -(void)addTapGestures {
-  UITapGestureRecognizer *singleFingerTap =
-  [[UITapGestureRecognizer alloc] initWithTarget:self
-                                          action:@selector(handleSingleTap:)];
+  UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(handleSingleTap:)];
   myTapGestures = [NSMutableArray new];
   [myTapGestures addObject:singleFingerTap];
   [self addGestureRecognizer:singleFingerTap];

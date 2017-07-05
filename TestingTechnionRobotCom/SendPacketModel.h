@@ -1,5 +1,5 @@
 //
-//  PacketModel.h
+//  SendPacketModel.h
 //  TestingTechnionRobotCom
 //
 //  Created by Yaniv Hasbani on 6/30/17.
@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "MovementConsts.h"
+#import "udpPacketProtocol.h"
 
-@interface PacketModel : NSObject
+@interface SendPacketModel : NSObject<UDPPacketProtocol>
 
-+(instancetype)newWithMessage:(NSString *)message robotNumber:(NSNumber *)robotNumber;
++(instancetype)newWithMessage:(NSString *)message sateliteNumber:(NSNumber *)sateliteNumber;
+
 -(NSDictionary *)generatePacket;
 
 @end

@@ -12,12 +12,19 @@
 #import "GestureProtocol.h"
 
 @protocol GestureDelegate <NSObject>
-
+//Swipe
+@optional
 -(void)swipeLeft;
 -(void)swipeRight;
 -(void)swipeDown;
 -(void)swipeUp;
--(void)handleSingleTap:(UIView *)button;
+
+//Single tap
+@optional
+-(void)handleSingleTap:(UIView *)view;
+
+//Hold
+@optional
 -(void)handleHold:(UIButton *)sender;
 -(void)handleRelease:(UIView *)sender;
 

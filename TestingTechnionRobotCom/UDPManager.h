@@ -7,18 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "udpPacketProtocol.h"
 
 typedef void(^connectionCompletionBlock)(NSError *err);
 
+@class SateliteLocation;
 @interface UDPManager : NSObject
 
-+(instancetype)sharedManager;
-
--(void)openConnectionForData:(NSString *)ipAddress
++(void)openConnectionForData:(NSString *)ipAddress
                      udpPort:(NSString *)udpPort
                 intervalTime:(NSNumber *)intervalTime
                   completion:(connectionCompletionBlock)completion;
 
--(NSString *)getPacket;
--(void)sendPacket:(NSString *)message;
++(NSArray<UDPPacketProtocol> *)getPackets;
++(void)sendPacket:(id<UDPPacketProtocol>)message;
 @end

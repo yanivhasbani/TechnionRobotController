@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CoordinateDelegate <NSObject>
+@protocol MovementIdentifierDelegate <NSObject>
 
 -(void)S;
 -(void)R;
@@ -18,13 +18,13 @@
 
 @end
 
-@interface Coordinates : NSObject
+@interface MovementIdentifier : NSObject
 
-@property (nonatomic, weak) id<CoordinateDelegate> delegate;
+@property (nonatomic, weak) id<MovementIdentifierDelegate> delegate;
 
 +(instancetype)shared;
 
--(void)start;
--(void)stop;
++(void)start;
++(void)stop;
 
 @end

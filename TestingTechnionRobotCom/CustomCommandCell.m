@@ -5,8 +5,11 @@
 //  Created by Yaniv Hasbani on 6/27/17.
 //  Copyright © 2017 Yaniv. All rights reserved.
 //
+#import <QuartzCore/QuartzCore.h>
 
 #import "CustomCommandCell.h"
+#import "SendPacketModel.h"
+#import "UDPManager.h"
 
 @interface CustomCommandCell()
 
@@ -17,6 +20,14 @@
 
 -(void)configureCell:(NSString *)cmdName {
   self.commandLabel.text = cmdName;
+  
+  self.layer.cornerRadius = 2.5;
+}
+
+-(void)sendCmdToServer:(NSNumber *)sateliteNumber {
+  SendPacketModel *p = [SendPacketModel newWithMessage:self.commandLabel.text sateliteNumber:sateliteNumber];
+  
+  [UDPManager sendPacket:p];
 }
 
 @end

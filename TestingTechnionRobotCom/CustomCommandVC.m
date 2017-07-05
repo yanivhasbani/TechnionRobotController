@@ -9,6 +9,7 @@
 #import "CustomCommandVC.h"
 #import "CustomCommandCell.h"
 #import "CHCSVParser.h"
+#import "UIAlertController+MyAlertController.h"
 
 @interface CustomCommandVC () <UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UITextField *numberOfCommandsField;
@@ -73,15 +74,10 @@ static double _numberOfCommands;
 {
   [textField resignFirstResponder];
   if (textField.text.integerValue < 0) {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Incorrect Number of commands"
-                                                                             message:@"Please specify number bigger than 0"
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    //We add buttons to the alert controller by creating UIAlertActions:
-    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
-    [alertController addAction:actionOk];
-    [self presentViewController:alertController animated:YES completion:nil];
+    UIAlertController *a = [UIAlertController newWithTitle:@"Incorrect Number of commands"
+                                                   message:@"Please specify number bigger than 0"];
+    
+    [self presentViewController:a animated:YES completion:nil];
     return NO;
   }
   
@@ -101,6 +97,13 @@ static double _numberOfCommands;
 
 #pragma mark <UICollectionViewDelegate>
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  CustomCommandCell *c = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+  if (c) {
+    [c sendCmdToServer:_sateliteNumber];
+  }
+}
+
 /*
  // Uncomment this method to specify if the specified item should be highlighted during tracking
  - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,9 +111,12 @@ static double _numberOfCommands;
  }
  */
 
+/*
+ // Uncomment this method to specify if the specified item should be selected
  - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
  return YES;
  }
+ */
 
 /*
  // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item

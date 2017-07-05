@@ -18,6 +18,6 @@ typedef NS_ENUM(NSUInteger, UIType) {
 @property (nonatomic, assign) UIType segueData;
 @property (nonatomic, strong) NSString *ipAddress;
 @property (nonatomic, strong) NSString *udpPort;
-@property (nonatomic, strong) NSNumber *robotNumber;
+@property (nonatomic, strong) NSNumber *sateliteNumber;
 
 @end

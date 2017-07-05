@@ -1,0 +1,5 @@
+{
+	"ipAddress" : "10.0.0.64",
+  	"sateliteNumber" : 1, ( Between 1-10 )
+  	"message" : "RotateLeft" ("Up"/"Down"/"Left"/"Right"/"RotateLeft"/"RotateRight")
+}

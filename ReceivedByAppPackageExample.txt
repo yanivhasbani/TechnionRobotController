@@ -1,0 +1,28 @@
+{
+	"myLocation" : {
+        "sateliteNumber" : 1, (Between 1-10)
+        "coordinates" : {
+            "x" : 1.2, (Between 0-4, every click moves it 0.2)
+	        "y" : 2.6, (Between 0-4, every click moves it 0.2)
+	        "degree" : PI/4 (In Radians!
+        }
+    },
+    "sateliteLocations" : [
+    	{
+	        "sateliteNumber" : 2, (Between 1-10)
+	        "coordinates" : {
+	            "x" : 1.2, (Between 0-4, every click moves it 0.2)
+	            "y" : 2.6, (Between 0-4, every click moves it 0.2)
+	            "degree" : PI/4 (In Radians!)
+	        }
+       	},
+       	{
+	        "sateliteNumber" : 5, (Between 1-10)
+	        "coordinates" : {
+				"x" : 1.2, (Between 0-4, every click moves it 0.2)
+	            "y" : 2.6, (Between 0-4, every click moves it 0.2)
+	            "degree" : PI/4 (In Radians!)
+	        }
+       	}
+    ]
+}

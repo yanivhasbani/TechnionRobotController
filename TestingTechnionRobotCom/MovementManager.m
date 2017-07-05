@@ -7,9 +7,9 @@
 //
 
 #import "MovementManager.h"
-#import "Coordinates.h"
+#import "MovementIdentifier.h"
 
-@interface MovementManager() <CoordinateDelegate>
+@interface MovementManager() <MovementIdentifierDelegate>
 
 //int =  SateliteCommand
 @property (nonatomic, strong) NSNumber *lastMove;
@@ -29,13 +29,13 @@ static MovementManager* movementManager;
 }
 
 -(void)start {
-  [Coordinates shared].delegate = self;
-  [[Coordinates shared] start];
+  [MovementIdentifier shared].delegate = self;
+  [MovementIdentifier start];
 }
 
 -(void)stop {
-  [[Coordinates shared] stop];
-  [Coordinates shared].delegate = nil;
+  [MovementIdentifier stop];
+  [MovementIdentifier shared].delegate = nil;
 }
 
 
