@@ -64,8 +64,36 @@
     NSLog(@"json: error: %@", error.localizedDescription);
     return @"{}";
   } else {
-    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSString *s = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return s;
   }
+}
+
+-(NSDictionary *)returnOnlyLast:(NSUInteger)numberOfElements {
+  NSArray *lastXelementsKeys = [[self allKeys] sortedArrayUsingComparator:^(id obj1, id obj2) {
+    
+    if ([obj1 integerValue] > [obj2 integerValue]) {
+      
+      return (NSComparisonResult)NSOrderedDescending;
+    }
+    if ([obj1 integerValue] < [obj2 integerValue]) {
+      
+      return (NSComparisonResult)NSOrderedAscending;
+    }
+    
+    return (NSComparisonResult)NSOrderedSame;
+  }];
+  
+  NSMutableDictionary *d = [NSMutableDictionary new];
+  for (NSNumber *key in lastXelementsKeys) {
+    [d setObject:self[key] forKey:key];
+    
+    if ([d count] == numberOfElements) {
+      break;
+    }
+  }
+  
+  return [d copy];
 }
 
 @end

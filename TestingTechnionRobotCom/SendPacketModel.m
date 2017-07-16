@@ -34,7 +34,9 @@ static NSHashTable *debug_packetGenerated;
 
 
 -(NSDictionary *)generatePacket {
+#ifdef NETWORK_LOGS
   [debug_packetGenerated addObject:self];
+#endif
   
   return @{
            @"sateliteNumber" : _sateliteNumber ? : [NSNull null],

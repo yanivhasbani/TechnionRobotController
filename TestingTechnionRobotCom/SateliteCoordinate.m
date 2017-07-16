@@ -8,6 +8,7 @@
 
 #import "SateliteCoordinate.h"
 #import "parseJSONProtocol.h"
+#import "NSDictionary+Utils.h"
 
 @interface SateliteCoordinate()
 
@@ -21,15 +22,35 @@
 
 @implementation SateliteCoordinate
 
+-(NSDictionary *)json {
+  return @{
+           @"x" : @(_x),
+           @"y" : @(_y),
+           @"degree" : @(_degree),
+           };
+}
+
+-(NSString *)description {
+  return [self debugDescription];
+}
+
+-(NSString *)debugDescription {
+  return [@{
+            @"x" : @(_x),
+            @"y" : @(_y),
+            @"degree" : @(_degree),
+            } json];
+}
+
 +(BOOL)validateJSON:(NSDictionary *)dictionary {
   if (!dictionary) {
     NSLog(@"No data for location");
-    return nil;
+    return NO;
   }
   
   if (![dictionary isKindOfClass:[NSDictionary class]]) {
     NSLog(@"Location data received is not a dictionary. data = %@", dictionary);
-    return nil;
+    return NO;
   }
   
   if(![dictionary[@"x"] isKindOfClass:[NSNumber class]] ||

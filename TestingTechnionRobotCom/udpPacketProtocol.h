@@ -9,10 +9,14 @@
 #ifndef NetworkProtocol_h
 #define NetworkProtocol_h
 
-@protocol  UDPPacketProtocol <NSObject>
+@protocol UDPPacketProtocol <NSObject>
 
+@required
 -(NSDictionary *)generatePacket;
 -(NSString *)debugDescription;
+
+@optional
+-(NSDictionary *)json;
 
 @end
 

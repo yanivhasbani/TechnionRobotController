@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		458D1A36879B63A234183D59 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03F1FFB16B542AB1591DD73 /* Pods_TestingTechnionRobotComTests.framework */; };
-		5634523DA4A11A38F87BCED5 /* Pods_TestingTechnionRobotCom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D35E692E622E75283969D /* Pods_TestingTechnionRobotCom.framework */; };
-		5CB039D4BBDF6A77355AFF96 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A155E5607DB60033721AC9A7 /* Pods_TestingTechnionRobotComUITests.framework */; };
+		28FF2CD63ED1140D91BDF4F7 /* Pods_TestingTechnionRobotCom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7431E257F9562EAF7CFD0166 /* Pods_TestingTechnionRobotCom.framework */; };
 		790595751F014D7E0008A993 /* UIView+Gestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 790595741F014D7D0008A993 /* UIView+Gestures.m */; };
-		7905957B1F02DA320008A993 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905957A1F02DA320008A993 /* CHCSVParser.m */; };
 		791988EB1F02DE6300C846EA /* CustomCommandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 791988EA1F02DE6300C846EA /* CustomCommandCell.m */; };
 		791988EE1F02DF2000C846EA /* CustomCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 791988ED1F02DF2000C846EA /* CustomCommandVC.m */; };
 		791989981F06665200C846EA /* UIView+InflateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989971F06665200C846EA /* UIView+InflateAnimation.m */; };
@@ -29,19 +26,24 @@
 		791E6F791DE1978200E6E431 /* TestingTechnionRobotComUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F781DE1978200E6E431 /* TestingTechnionRobotComUITests.m */; };
 		792321D21F0A97D800B352E5 /* MyMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 792321D11F0A97D800B352E5 /* MyMapView.m */; };
 		792321D41F0A9A3500B352E5 /* Satelite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792321D31F0A9A3500B352E5 /* Satelite.xib */; };
+		7961F78B1F0D1C8400E307F4 /* RuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7961F78A1F0D1C8400E307F4 /* RuntimeUtils.m */; };
 		7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7974E3FB1E58A2720064F720 /* Main.storyboard */; };
 		7977B9C01EFEDEEB004BBDE5 /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7977B9BF1EFEDEEB004BBDE5 /* Log.m */; };
 		799785951F096D810017905E /* UIAlertController+MyAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799785941F096D810017905E /* UIAlertController+MyAlertController.m */; };
 		79AD89FB1F0BF7A600389306 /* MySateliteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AD89FA1F0BF7A600389306 /* MySateliteView.m */; };
 		79B919681F0CE6FE00EFE823 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B919671F0CE6FE00EFE823 /* assets.xcassets */; };
-		79B9196A1F0CF57900EFE823 /* Tooltip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B919691F0CF57900EFE823 /* Tooltip.xib */; };
 		79BFB4511EEFF881005E612D /* UDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFB4501EEFF881005E612D /* UDPManager.m */; };
+		79CF1FB71F13C77200573202 /* LogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF1FB61F13C77200573202 /* LogVC.m */; };
+		79CF1FBF1F13CBEF00573202 /* LogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF1FBE1F13CBEF00573202 /* LogCell.m */; };
+		79CF1FC41F13D66700573202 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF1FC31F13D66700573202 /* NSArray+JSON.m */; };
 		79FF48F71EF99088002D394D /* NetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF48F61EF99088002D394D /* NetworkUtils.m */; };
 		79FF48FA1EF9B5FA002D394D /* MovementIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF48F91EF9B5FA002D394D /* MovementIdentifier.m */; };
 		79FF4A041EFEA33C002D394D /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A031EFEA33C002D394D /* PlayVC.m */; };
 		79FF4A081EFEA3B9002D394D /* MovementManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A071EFEA3B9002D394D /* MovementManager.m */; };
 		79FF4A0C1EFEAF8B002D394D /* MovementConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A0B1EFEAF8B002D394D /* MovementConsts.m */; };
 		79FF4A121EFEC6F8002D394D /* UIView+ShakeProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */; };
+		8A440FA73498E215D2DCCA82 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EE39AA45CCCD89B5C7ED71 /* Pods_TestingTechnionRobotComTests.framework */; };
+		BADB8A6BB1253398205D35B4 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6028016D59A8C8B1D1D512B /* Pods_TestingTechnionRobotComUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,14 +64,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27506001132A3A0AECB5292B /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		294D35E692E622E75283969D /* Pods_TestingTechnionRobotCom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotCom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FFBE4781C399FCDB6164941 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests.debug.xcconfig"; sourceTree = "<group>"; };
+		17F80F623162DAB7A36FD2FF /* Pods-TestingTechnionRobotComTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A93D44AA592EADFD9D92F54 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39FEF7053956632E830BF108 /* Pods-TestingTechnionRobotCom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.debug.xcconfig"; sourceTree = "<group>"; };
+		7431E257F9562EAF7CFD0166 /* Pods_TestingTechnionRobotCom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotCom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F6FBC38CD9C322048BCAB7 /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		790595731F014D7D0008A993 /* UIView+Gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gestures.h"; sourceTree = "<group>"; };
 		790595741F014D7D0008A993 /* UIView+Gestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gestures.m"; sourceTree = "<group>"; };
 		790595761F014E6E0008A993 /* GestureProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureProtocol.h; sourceTree = "<group>"; };
-		790595791F02DA320008A993 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
-		7905957A1F02DA320008A993 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		791988E91F02DE6300C846EA /* CustomCommandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCommandCell.h; sourceTree = "<group>"; };
 		791988EA1F02DE6300C846EA /* CustomCommandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCommandCell.m; sourceTree = "<group>"; };
 		791988EC1F02DF2000C846EA /* CustomCommandVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCommandVC.h; sourceTree = "<group>"; };
@@ -108,6 +110,8 @@
 		792321D01F0A97D800B352E5 /* MyMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapView.h; sourceTree = "<group>"; };
 		792321D11F0A97D800B352E5 /* MyMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapView.m; sourceTree = "<group>"; };
 		792321D31F0A9A3500B352E5 /* Satelite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Satelite.xib; sourceTree = "<group>"; };
+		7961F7891F0D1C8400E307F4 /* RuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeUtils.h; sourceTree = "<group>"; };
+		7961F78A1F0D1C8400E307F4 /* RuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeUtils.m; sourceTree = "<group>"; };
 		7974E3FB1E58A2720064F720 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7977B9BE1EFEDEEB004BBDE5 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 		7977B9BF1EFEDEEB004BBDE5 /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
@@ -116,9 +120,14 @@
 		79AD89F91F0BF7A600389306 /* MySateliteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySateliteView.h; sourceTree = "<group>"; };
 		79AD89FA1F0BF7A600389306 /* MySateliteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySateliteView.m; sourceTree = "<group>"; };
 		79B919671F0CE6FE00EFE823 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
-		79B919691F0CF57900EFE823 /* Tooltip.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tooltip.xib; sourceTree = "<group>"; };
 		79BFB44F1EEFF881005E612D /* UDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPManager.h; sourceTree = "<group>"; };
 		79BFB4501EEFF881005E612D /* UDPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPManager.m; sourceTree = "<group>"; };
+		79CF1FB51F13C77200573202 /* LogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogVC.h; sourceTree = "<group>"; };
+		79CF1FB61F13C77200573202 /* LogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogVC.m; sourceTree = "<group>"; };
+		79CF1FBD1F13CBEF00573202 /* LogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCell.h; sourceTree = "<group>"; };
+		79CF1FBE1F13CBEF00573202 /* LogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCell.m; sourceTree = "<group>"; };
+		79CF1FC21F13D66700573202 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSON.h"; sourceTree = "<group>"; };
+		79CF1FC31F13D66700573202 /* NSArray+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSON.m"; sourceTree = "<group>"; };
 		79FF48F51EF99088002D394D /* NetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtils.h; sourceTree = "<group>"; };
 		79FF48F61EF99088002D394D /* NetworkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtils.m; sourceTree = "<group>"; };
 		79FF48F81EF9B5FA002D394D /* MovementIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementIdentifier.h; sourceTree = "<group>"; };
@@ -132,12 +141,10 @@
 		79FF4A0E1EFEC65A002D394D /* ShakeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeProtocol.h; sourceTree = "<group>"; };
 		79FF4A101EFEC6F8002D394D /* UIView+ShakeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ShakeProtocol.h"; sourceTree = "<group>"; };
 		79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ShakeProtocol.m"; sourceTree = "<group>"; };
-		80B9130556C6AB5AE530C37B /* Pods-TestingTechnionRobotCom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.release.xcconfig"; sourceTree = "<group>"; };
-		9EBEF6E0173175E7D3DA8E87 /* Pods-TestingTechnionRobotCom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.debug.xcconfig"; sourceTree = "<group>"; };
-		A155E5607DB60033721AC9A7 /* Pods_TestingTechnionRobotComUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7C274F6F88F9A27FEAE25C0 /* Pods-TestingTechnionRobotComTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests.release.xcconfig"; sourceTree = "<group>"; };
-		E03F1FFB16B542AB1591DD73 /* Pods_TestingTechnionRobotComTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBAE04F48FEC0925318A9246 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8740A9CCB5EFF8A79CF2ECB3 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C6028016D59A8C8B1D1D512B /* Pods_TestingTechnionRobotComUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6EE39AA45CCCD89B5C7ED71 /* Pods_TestingTechnionRobotComTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F502FC7607D21C59DF2B9429 /* Pods-TestingTechnionRobotCom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5634523DA4A11A38F87BCED5 /* Pods_TestingTechnionRobotCom.framework in Frameworks */,
+				28FF2CD63ED1140D91BDF4F7 /* Pods_TestingTechnionRobotCom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				458D1A36879B63A234183D59 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */,
+				8A440FA73498E215D2DCCA82 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,22 +168,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CB039D4BBDF6A77355AFF96 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */,
+				BADB8A6BB1253398205D35B4 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F6FA20B84F9076C9EAE977A /* Pods */ = {
+		2C1E52F519FC81B11914CB9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9EBEF6E0173175E7D3DA8E87 /* Pods-TestingTechnionRobotCom.debug.xcconfig */,
-				80B9130556C6AB5AE530C37B /* Pods-TestingTechnionRobotCom.release.xcconfig */,
-				3FFBE4781C399FCDB6164941 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */,
-				D7C274F6F88F9A27FEAE25C0 /* Pods-TestingTechnionRobotComTests.release.xcconfig */,
-				27506001132A3A0AECB5292B /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */,
-				EBAE04F48FEC0925318A9246 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */,
+				7431E257F9562EAF7CFD0166 /* Pods_TestingTechnionRobotCom.framework */,
+				E6EE39AA45CCCD89B5C7ED71 /* Pods_TestingTechnionRobotComTests.framework */,
+				C6028016D59A8C8B1D1D512B /* Pods_TestingTechnionRobotComUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49AA452A3FCA3237AF2100ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39FEF7053956632E830BF108 /* Pods-TestingTechnionRobotCom.debug.xcconfig */,
+				F502FC7607D21C59DF2B9429 /* Pods-TestingTechnionRobotCom.release.xcconfig */,
+				2A93D44AA592EADFD9D92F54 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */,
+				17F80F623162DAB7A36FD2FF /* Pods-TestingTechnionRobotComTests.release.xcconfig */,
+				74F6FBC38CD9C322048BCAB7 /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */,
+				8740A9CCB5EFF8A79CF2ECB3 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -236,8 +253,8 @@
 				791E6F6C1DE1978200E6E431 /* TestingTechnionRobotComTests */,
 				791E6F771DE1978200E6E431 /* TestingTechnionRobotComUITests */,
 				791E6F511DE1978200E6E431 /* Products */,
-				1F6FA20B84F9076C9EAE977A /* Pods */,
-				B3560ED354C937E75145A7C4 /* Frameworks */,
+				49AA452A3FCA3237AF2100ED /* Pods */,
+				2C1E52F519FC81B11914CB9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,8 +335,10 @@
 				791988ED1F02DF2000C846EA /* CustomCommandVC.m */,
 				791989B51F06C9C900C846EA /* MapVC.h */,
 				791989B61F06C9C900C846EA /* MapVC.m */,
-				799785931F096D810017905E /* UIAlertController+MyAlertController.h */,
-				799785941F096D810017905E /* UIAlertController+MyAlertController.m */,
+				79CF1FB51F13C77200573202 /* LogVC.h */,
+				79CF1FB61F13C77200573202 /* LogVC.m */,
+				79CF1FBD1F13CBEF00573202 /* LogCell.h */,
+				79CF1FBE1F13CBEF00573202 /* LogCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -329,13 +348,14 @@
 			children = (
 				7974E3FB1E58A2720064F720 /* Main.storyboard */,
 				792321D31F0A9A3500B352E5 /* Satelite.xib */,
-				79B919691F0CF57900EFE823 /* Tooltip.xib */,
 				791988E91F02DE6300C846EA /* CustomCommandCell.h */,
 				791988EA1F02DE6300C846EA /* CustomCommandCell.m */,
 				792321D01F0A97D800B352E5 /* MyMapView.h */,
 				792321D11F0A97D800B352E5 /* MyMapView.m */,
 				79AD89F91F0BF7A600389306 /* MySateliteView.h */,
 				79AD89FA1F0BF7A600389306 /* MySateliteView.m */,
+				799785931F096D810017905E /* UIAlertController+MyAlertController.h */,
+				799785941F096D810017905E /* UIAlertController+MyAlertController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -367,10 +387,10 @@
 			children = (
 				79FF48F51EF99088002D394D /* NetworkUtils.h */,
 				79FF48F61EF99088002D394D /* NetworkUtils.m */,
-				790595791F02DA320008A993 /* CHCSVParser.h */,
-				7905957A1F02DA320008A993 /* CHCSVParser.m */,
 				7977B9BE1EFEDEEB004BBDE5 /* Log.h */,
 				7977B9BF1EFEDEEB004BBDE5 /* Log.m */,
+				7961F7891F0D1C8400E307F4 /* RuntimeUtils.h */,
+				7961F78A1F0D1C8400E307F4 /* RuntimeUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -396,18 +416,10 @@
 				791989971F06665200C846EA /* UIView+InflateAnimation.m */,
 				791989B21F06C4E600C846EA /* NSDictionary+Utils.h */,
 				791989B31F06C4E600C846EA /* NSDictionary+Utils.m */,
+				79CF1FC21F13D66700573202 /* NSArray+JSON.h */,
+				79CF1FC31F13D66700573202 /* NSArray+JSON.m */,
 			);
 			name = Extenstion;
-			sourceTree = "<group>";
-		};
-		B3560ED354C937E75145A7C4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				294D35E692E622E75283969D /* Pods_TestingTechnionRobotCom.framework */,
-				E03F1FFB16B542AB1591DD73 /* Pods_TestingTechnionRobotComTests.framework */,
-				A155E5607DB60033721AC9A7 /* Pods_TestingTechnionRobotComUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,12 +429,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 791E6F7D1DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotCom" */;
 			buildPhases = (
-				6DDBC48D86AA7EEAB83EBFB6 /* [CP] Check Pods Manifest.lock */,
+				B401DD98B1564A9086DA6379 /* [CP] Check Pods Manifest.lock */,
 				791E6F4C1DE1978200E6E431 /* Sources */,
 				791E6F4D1DE1978200E6E431 /* Frameworks */,
 				791E6F4E1DE1978200E6E431 /* Resources */,
-				C6A6946BC7B78F976FA69B1F /* [CP] Embed Pods Frameworks */,
-				E0B536E1E1730D6F67552AFA /* [CP] Copy Pods Resources */,
+				12666F04793AE1D16B7A6C58 /* [CP] Embed Pods Frameworks */,
+				DC2D6094D6E0D281D9A4D45C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -437,12 +449,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 791E6F801DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotComTests" */;
 			buildPhases = (
-				BBFA17056732D696A9FB54A4 /* [CP] Check Pods Manifest.lock */,
+				EF8D7E4716CA70055B168D02 /* [CP] Check Pods Manifest.lock */,
 				791E6F651DE1978200E6E431 /* Sources */,
 				791E6F661DE1978200E6E431 /* Frameworks */,
 				791E6F671DE1978200E6E431 /* Resources */,
-				90F342A96B331E0E2EF22585 /* [CP] Embed Pods Frameworks */,
-				D7AD14A693988DC19EF2778F /* [CP] Copy Pods Resources */,
+				99A983B020FCC3627B4ED89B /* [CP] Embed Pods Frameworks */,
+				ADC6EECEE38E4BE6178BB9E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -458,11 +470,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 791E6F831DE1978200E6E431 /* Build configuration list for PBXNativeTarget "TestingTechnionRobotComUITests" */;
 			buildPhases = (
-				57A5F1530897861949E805DB /* [CP] Check Pods Manifest.lock */,
+				82A72828BB69A72AB3D21EAF /* [CP] Check Pods Manifest.lock */,
 				791E6F701DE1978200E6E431 /* Sources */,
 				791E6F711DE1978200E6E431 /* Frameworks */,
 				791E6F721DE1978200E6E431 /* Resources */,
-				C7621FED6989E3AA7C5532BB /* [CP] Copy Pods Resources */,
+				B2BFE5CD9536AB0F5C300938 /* [CP] Embed Pods Frameworks */,
+				035AB290AB36D9C6D15C1898 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -485,7 +498,7 @@
 				TargetAttributes = {
 					791E6F4F1DE1978200E6E431 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 95GPBW627H;
+						DevelopmentTeam = SG9V4Q96YZ;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -529,7 +542,6 @@
 				7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */,
 				792321D41F0A9A3500B352E5 /* Satelite.xib in Resources */,
 				79B919681F0CE6FE00EFE823 /* assets.xcassets in Resources */,
-				79B9196A1F0CF57900EFE823 /* Tooltip.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,82 +562,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57A5F1530897861949E805DB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6DDBC48D86AA7EEAB83EBFB6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		90F342A96B331E0E2EF22585 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBFA17056732D696A9FB54A4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C6A6946BC7B78F976FA69B1F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7621FED6989E3AA7C5532BB /* [CP] Copy Pods Resources */ = {
+		035AB290AB36D9C6D15C1898 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -640,7 +577,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D7AD14A693988DC19EF2778F /* [CP] Copy Pods Resources */ = {
+		12666F04793AE1D16B7A6C58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82A72828BB69A72AB3D21EAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99A983B020FCC3627B4ED89B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADC6EECEE38E4BE6178BB9E7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -655,7 +637,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComTests/Pods-TestingTechnionRobotComTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0B536E1E1730D6F67552AFA /* [CP] Copy Pods Resources */ = {
+		B2BFE5CD9536AB0F5C300938 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B401DD98B1564A9086DA6379 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC2D6094D6E0D281D9A4D45C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -670,6 +682,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF8D7E4716CA70055B168D02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -677,6 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7961F78B1F0D1C8400E307F4 /* RuntimeUtils.m in Sources */,
 				791989B41F06C4E600C846EA /* NSDictionary+Utils.m in Sources */,
 				79AD89FB1F0BF7A600389306 /* MySateliteView.m in Sources */,
 				7977B9C01EFEDEEB004BBDE5 /* Log.m in Sources */,
@@ -695,13 +723,15 @@
 				791E6F551DE1978200E6E431 /* main.m in Sources */,
 				791989981F06665200C846EA /* UIView+InflateAnimation.m in Sources */,
 				799785951F096D810017905E /* UIAlertController+MyAlertController.m in Sources */,
-				7905957B1F02DA320008A993 /* CHCSVParser.m in Sources */,
 				791989B11F06AD0A00C846EA /* MapModel.m in Sources */,
 				791989A71F069A8D00C846EA /* SateliteCoordinate.m in Sources */,
+				79CF1FC41F13D66700573202 /* NSArray+JSON.m in Sources */,
+				79CF1FB71F13C77200573202 /* LogVC.m in Sources */,
 				79BFB4511EEFF881005E612D /* UDPManager.m in Sources */,
 				791989B71F06C9C900C846EA /* MapVC.m in Sources */,
 				790595751F014D7E0008A993 /* UIView+Gestures.m in Sources */,
 				791989BA1F09619900C846EA /* ReceivedPacketModel.m in Sources */,
+				79CF1FBF1F13CBEF00573202 /* LogCell.m in Sources */,
 				79FF4A121EFEC6F8002D394D /* UIView+ShakeProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,15 +865,15 @@
 		};
 		791E6F7E1DE1978200E6E431 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EBEF6E0173175E7D3DA8E87 /* Pods-TestingTechnionRobotCom.debug.xcconfig */;
+			baseConfigurationReference = 39FEF7053956632E830BF108 /* Pods-TestingTechnionRobotCom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
-				DEVELOPMENT_TEAM = 95GPBW627H;
+				DEVELOPMENT_TEAM = SG9V4Q96YZ;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TechnionTest.TestingTechnionRobotCom;
+				PRODUCT_BUNDLE_IDENTIFIER = Technion.TestingTechnionRobotCom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -852,15 +882,15 @@
 		};
 		791E6F7F1DE1978200E6E431 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80B9130556C6AB5AE530C37B /* Pods-TestingTechnionRobotCom.release.xcconfig */;
+			baseConfigurationReference = F502FC7607D21C59DF2B9429 /* Pods-TestingTechnionRobotCom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
-				DEVELOPMENT_TEAM = 95GPBW627H;
+				DEVELOPMENT_TEAM = SG9V4Q96YZ;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TechnionTest.TestingTechnionRobotCom;
+				PRODUCT_BUNDLE_IDENTIFIER = Technion.TestingTechnionRobotCom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -869,7 +899,7 @@
 		};
 		791E6F811DE1978200E6E431 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FFBE4781C399FCDB6164941 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */;
+			baseConfigurationReference = 2A93D44AA592EADFD9D92F54 /* Pods-TestingTechnionRobotComTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TestingTechnionRobotComTests/Info.plist;
@@ -882,7 +912,7 @@
 		};
 		791E6F821DE1978200E6E431 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C274F6F88F9A27FEAE25C0 /* Pods-TestingTechnionRobotComTests.release.xcconfig */;
+			baseConfigurationReference = 17F80F623162DAB7A36FD2FF /* Pods-TestingTechnionRobotComTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TestingTechnionRobotComTests/Info.plist;
@@ -895,7 +925,7 @@
 		};
 		791E6F841DE1978200E6E431 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27506001132A3A0AECB5292B /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */;
+			baseConfigurationReference = 74F6FBC38CD9C322048BCAB7 /* Pods-TestingTechnionRobotComUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TestingTechnionRobotComUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -907,7 +937,7 @@
 		};
 		791E6F851DE1978200E6E431 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBAE04F48FEC0925318A9246 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */;
+			baseConfigurationReference = 8740A9CCB5EFF8A79CF2ECB3 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TestingTechnionRobotComUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

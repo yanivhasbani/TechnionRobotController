@@ -11,6 +11,7 @@
 #import "SateliteLocation.h"
 #import "SateliteCoordinate.h"
 #import "UIView+Gestures.h"
+#import "MapModel.h"
 
 int xLabelSize = 25;
 int yLabelSize = 25;
@@ -111,43 +112,66 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
 
 #pragma mark -
 #pragma mark API
+-(void)reset {
+  for (MySateliteView *v in _satelites) {
+    v.hidden = YES;
+    [v removeFromSuperview];
+    [_satelites removeObject:v];
+  }
+}
+
 -(void)loadLocations:(MapModel *)locations {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     _satelites = [NSMutableArray new];
   });
-  for (MySateliteView *v in _satelites) {
-    v.hidden = YES;
-    [v removeFromSuperview];
+  
+  [self createSateliteViewFromLocation:locations.myLocation];
+  
+  for (SateliteLocation *l in locations.otherLocations) {
+    [self createSateliteViewFromLocation:l];
   }
-
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [self createSateliteViewFromLocation:locations.myLocation];
-    
-    for (SateliteLocation *l in locations.otherLocations) {
-      [self createSateliteViewFromLocation:l];
-    }
-  });
 }
 
 #pragma mark -
 #pragma mark SateliteCreation
 -(void)createSateliteViewFromLocation:(SateliteLocation *)location {
-  CGRect frame = [self createRectFromLocation:location];
-  MySateliteView *myLocationView = [MySateliteView newWithFrame:frame];
-  [myLocationView rotate:M_PI/4];
-  [myLocationView addTapGestures];
-  myLocationView.gestureDelegate = self;
-  
-  [_satelites addObject:myLocationView];
-  [self addSubview:myLocationView];
+  CGPoint center = [self createPointFromLocation:location];
+  MySateliteView *locationView;
+  for (MySateliteView *v in _satelites) {
+    if (v.tag == location.sateliteNumber.integerValue) {
+      locationView = v;
+      break;
+    }
+  }
+  if (!locationView) {
+    locationView = [MySateliteView newWithFrame:CGRectMake(center.x - 15, center.y - 15, 30, 30)];
+    [locationView rotate:location.coordinates.degree];
+    locationView.tag = location.sateliteNumber.integerValue;
+    
+    [_satelites addObject:locationView];
+    [UIView animateWithDuration:0.7 animations:^{
+      [self addSubview:locationView];
+    }];
+  } else {
+    if ([locationView needsNewCenter:location.coordinates]) {
+      [UIView animateWithDuration:0.2 animations:^{
+        locationView.bounds = CGRectMake(0, 0, 30, 30);
+        locationView.center = center;
+        locationView.superview.clipsToBounds = YES;
+      }];
+    }
+    if ([locationView needsRotate:location.coordinates]) {
+      [locationView rotate:location.coordinates.degree];
+    }
+  }
 }
 
 #pragma mark -
 #pragma mark SateliteDrawing
--(CGRect)createRectFromLocation:(SateliteLocation *)location {
-  double newX = xOrigin + xOffset * 10;
-  double newY = yOrigin + yOffset * 10;
+-(CGPoint)createPointFromLocation:(SateliteLocation *)location {
+  int newX = xOrigin + xOffset * location.coordinates.x + 15;
+  int newY = yOrigin + yOffset * location.coordinates.y + 15;
   
   if (newX > xOrigin + axisSize) {
     newX = xOrigin + axisSize;
@@ -157,13 +181,7 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
     newY = yOrigin + axisSize;
   }
   
-  return CGRectMake(newX, newY, 30, 30);
-}
-
-#pragma mark -
-#pragma mark SateliteTap
--(void)handleSingleTap:(UIView *)view {
-  
+  return CGPointMake(newX, newY);
 }
 
 @end

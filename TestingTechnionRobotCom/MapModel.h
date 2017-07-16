@@ -20,6 +20,7 @@ typedef void (^completionBlock)(BOOL);
 
 @interface MapModel : NSObject
 
+@property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) SateliteLocation *myLocation;
 @property (nonatomic, strong) NSArray<SateliteLocation *> *otherLocations;
 

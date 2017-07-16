@@ -9,15 +9,24 @@
 #import "ReceivedPacketModel.h"
 #import "parseJSONProtocol.h"
 #import "SateliteLocation.h"
+#import "NSArray+JSON.h"
 
 @interface ReceivedPacketModel() <parseJSONProtocol>
 
+@property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) SateliteLocation *myLocation;
 @property (nonatomic, strong) NSArray<SateliteLocation *> *otherLocations;
 
 @end
 
 @implementation ReceivedPacketModel
+
+-(NSDictionary *)json {
+  return @{
+    @"myLocation" : _myLocation ? [_myLocation json] : [NSNull null],
+    @"otherLocations" : _otherLocations ? [_otherLocations json] : [NSNull null],
+    };
+}
 
 +(BOOL)validateJSON:(NSDictionary *)dictionary {
   if (!dictionary) {
@@ -63,6 +72,7 @@
   }
   
   m.otherLocations = [others copy];
+  m.id = @([[NSDate date] timeIntervalSince1970]);
   
   return m;
 }
@@ -76,7 +86,7 @@
 }
 
 -(NSString *)debugDescription {
-  return [NSString stringWithFormat:@"%@", [self generatePacket]];
+  return [NSString stringWithFormat:@"%@", [self json]];
 }
 
 @end

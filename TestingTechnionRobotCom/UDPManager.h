@@ -10,6 +10,7 @@
 #import "udpPacketProtocol.h"
 
 typedef void(^connectionCompletionBlock)(NSError *err);
+typedef NSDictionary<NSNumber *, NSObject<UDPPacketProtocol> *> UDPDictionary;
 
 @class SateliteLocation;
 @interface UDPManager : NSObject
@@ -19,6 +20,6 @@ typedef void(^connectionCompletionBlock)(NSError *err);
                 intervalTime:(NSNumber *)intervalTime
                   completion:(connectionCompletionBlock)completion;
 
-+(NSArray<UDPPacketProtocol> *)getPackets;
++(UDPDictionary *)getReceivedPackets;
 +(void)sendPacket:(id<UDPPacketProtocol>)message;
 @end

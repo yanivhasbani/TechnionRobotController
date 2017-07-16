@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MapModel.h"
 
-
+@class MapModel;
 @interface MyMapView : UIView
 
+-(void)reset;
 -(void)loadLocations:(MapModel *)locations;
 
 @end

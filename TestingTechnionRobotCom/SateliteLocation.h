@@ -15,6 +15,7 @@
 @property (nonatomic, strong) SateliteCoordinate *coordinates;
 @property (nonatomic, strong) NSNumber *sateliteNumber;
 
+-(NSDictionary *)json;
 +(instancetype)newWithJson:(NSDictionary *)dictionary;
 
 @end

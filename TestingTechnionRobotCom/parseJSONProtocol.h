@@ -13,6 +13,7 @@
 @protocol parseJSONProtocol <NSObject>
 
 @required
+-(NSDictionary *)json;
 +(instancetype)newWithJson:(NSDictionary *)dictionary;
 +(BOOL)validateJSON:(NSDictionary *)dictionary;
 

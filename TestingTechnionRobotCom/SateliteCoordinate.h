@@ -14,6 +14,7 @@
 @property (nonatomic, assign) double y;
 @property (nonatomic, assign) double degree;
 
+-(NSDictionary *)json;
 +(instancetype)newWithJson:(NSDictionary *)dictionary;
 
 @end

@@ -10,12 +10,31 @@
 #import "SateliteCoordinate.h"
 #import "udpPacketProtocol.h"
 #import "parseJSONProtocol.h"
+#import "NSDictionary+Utils.h"
 
 @interface SateliteLocation() <parseJSONProtocol>
 
 @end
 
 @implementation SateliteLocation
+
+-(NSDictionary *)json {
+  return @{
+    @"sateliteNumber" : _sateliteNumber,
+    @"coordinates" : [_coordinates json]
+    };
+}
+
+-(NSString *)description {
+  return [self debugDescription];
+}
+
+-(NSString *)debugDescription {
+  return [@{
+           @"sateliteNumber" : _sateliteNumber,
+           @"coordinates" : [_coordinates json]
+           } json];
+}
 
 +(BOOL)validateJSON:(NSDictionary *)dictionary {
   if (!dictionary || ![dictionary isKindOfClass:[NSDictionary class]]) {

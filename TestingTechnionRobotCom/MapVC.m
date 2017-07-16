@@ -7,9 +7,10 @@
 //
 
 #import "MapVC.h"
-#import "UDPManager.h"
+#import "LogVC.h"
 #import "MapModel.h"
 #import "MyMapView.h"
+#import "UDPManager.h"
 #import "UIView+Gestures.h"
 #import "UIAlertController+MyAlertController.h"
 
@@ -30,7 +31,9 @@
     _map.delegate = self;
     _mapState.gestureDelegate = self;
     [_mapState addTapGestures];
-    [_map currentLocation];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [_map currentLocation];
+    });
 }
 
 
@@ -51,6 +54,7 @@
 #pragma mark -
 #pragma mark Gestures
 -(void)handleSingleTap:(UIView *)view {
+  [_mapView reset];
   if ([_mapState.text isEqualToString:@"Current"]) {
     _mapState.text = @"History";
     [_map historyOfLocations];
@@ -61,8 +65,28 @@
   [_map currentLocation];
 }
 
+#pragma mark -
+#pragma mark backButton
 - (IBAction)backButtonPressed:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark -
+#pragma mark Segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.destinationViewController isKindOfClass:[LogVC class]]) {
+    LogVC *vc = (LogVC *)segue.destinationViewController;
+    UDPDictionary *d = [UDPManager getReceivedPackets];
+    
+    NSMutableArray *m = [NSMutableArray new];
+    for (NSObject<UDPPacketProtocol> *p in [d allValues]) {
+      NSString *s = [NSString stringWithFormat:@"%@", [p json]];
+      [m addObject:s];
+    }
+    
+    vc.data = [m copy];
+  }
+}
+
 
 @end

@@ -16,5 +16,6 @@
 +(instancetype)newWithJson:(NSDictionary *)dictionary;
 //Create packet
 -(NSDictionary *)generatePacket;
+-(NSNumber *)id;
 
 @end

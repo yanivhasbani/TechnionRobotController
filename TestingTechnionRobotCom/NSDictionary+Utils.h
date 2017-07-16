@@ -16,6 +16,8 @@
 -(id)firstKey;
 -(id)lastKey;
 
+-(NSDictionary *)returnOnlyLast:(NSUInteger)numberOfElements;
+
 -(NSString *)json;
 
 @end
