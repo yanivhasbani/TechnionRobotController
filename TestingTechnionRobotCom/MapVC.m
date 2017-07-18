@@ -54,7 +54,7 @@
 #pragma mark -
 #pragma mark Gestures
 -(void)handleSingleTap:(UIView *)view {
-  [_mapView reset];
+//  [_mapView reset];
   if ([_mapState.text isEqualToString:@"Current"]) {
     _mapState.text = @"History";
     [_map historyOfLocations];

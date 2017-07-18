@@ -1,16 +1,16 @@
 //
-//  parseJSONProtocol.h
+//  ParseJSONProtocol.h
 //  TestingTechnionRobotCom
 //
 //  Created by Yaniv Hasbani on 7/2/17.
 //  Copyright © 2017 Yaniv. All rights reserved.
 //
 
-#ifndef parseJSONProtocol_h
-#define parseJSONProtocol_h
+#ifndef ParseJSONProtocol_h
+#define ParseJSONProtocol_h
 
 
-@protocol parseJSONProtocol <NSObject>
+@protocol ParseJSONProtocol <NSObject>
 
 @required
 -(NSDictionary *)json;
@@ -19,4 +19,4 @@
 
 @end
 
-#endif /* parseJSONProtocol_h */
+#endif /* ParseJSONProtocol_h */

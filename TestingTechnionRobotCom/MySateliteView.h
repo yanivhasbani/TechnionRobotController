@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class SateliteCoordinate;
+@class SateliteCoordinate, SateliteLocation;
 @interface MySateliteView : UIView
 
 @property (nonatomic, strong) SateliteCoordinate *lastLocation;
 
-+(instancetype)newWithFrame:(CGRect)frame;
 -(BOOL)needsRotate:(SateliteCoordinate *)coordinate;
 -(BOOL)needsNewCenter:(SateliteCoordinate *)coordinate;
--(void)rotate:(double)rads;
 
++(instancetype)newWithLocation:(SateliteLocation *)location myLocation:(BOOL)myLocation;
+
+-(void)rotate:(double)rads;
+-(void)update:(SateliteLocation *)location;
 @end

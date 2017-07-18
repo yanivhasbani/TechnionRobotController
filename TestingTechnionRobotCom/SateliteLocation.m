@@ -9,10 +9,10 @@
 #import "SateliteLocation.h"
 #import "SateliteCoordinate.h"
 #import "udpPacketProtocol.h"
-#import "parseJSONProtocol.h"
+#import "ParseJSONProtocol.h"
 #import "NSDictionary+Utils.h"
 
-@interface SateliteLocation() <parseJSONProtocol>
+@interface SateliteLocation() <ParseJSONProtocol>
 
 @end
 

@@ -14,4 +14,10 @@
 -(void)reset;
 -(void)loadLocations:(MapModel *)locations;
 
+extern double xOrigin;
+extern double yOrigin;
+extern double xOffset;
+extern double yOffset;
+extern int axisSize;
+
 @end

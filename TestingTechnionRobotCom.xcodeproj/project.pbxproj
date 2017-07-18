@@ -93,7 +93,7 @@
 		791989B61F06C9C900C846EA /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
 		791989B81F09619900C846EA /* ReceivedPacketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedPacketModel.h; sourceTree = "<group>"; };
 		791989B91F09619900C846EA /* ReceivedPacketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedPacketModel.m; sourceTree = "<group>"; };
-		791989BC1F0962CB00C846EA /* parseJSONProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parseJSONProtocol.h; sourceTree = "<group>"; };
+		791989BC1F0962CB00C846EA /* ParseJSONProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseJSONProtocol.h; sourceTree = "<group>"; };
 		791E6F501DE1978200E6E431 /* TestingTechnionRobotCom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingTechnionRobotCom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		791E6F541DE1978200E6E431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		791E6F561DE1978200E6E431 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		791989BB1F0962A500C846EA /* parseJSONProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				791989BC1F0962CB00C846EA /* parseJSONProtocol.h */,
+				791989BC1F0962CB00C846EA /* ParseJSONProtocol.h */,
 			);
 			name = parseJSONProtocol;
 			sourceTree = "<group>";

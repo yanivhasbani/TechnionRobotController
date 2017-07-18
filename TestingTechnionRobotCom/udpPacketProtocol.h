@@ -13,7 +13,7 @@
 
 @required
 -(NSDictionary *)generatePacket;
--(NSString *)debugDescription;
+-(NSString *)description;
 
 @optional
 -(NSDictionary *)json;

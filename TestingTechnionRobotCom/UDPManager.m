@@ -19,7 +19,7 @@
 #import "NSDictionary+Utils.h"
 #import "ReceivedPacketModel.h"
 
-typedef NSMutableDictionary<NSNumber *, NSObject<UDPPacketProtocol> *> UDPMutableDictionary;
+typedef NSMutableDictionary<NSNumber *, id<UDPPacketProtocol>> UDPMutableDictionary;
 
 @interface UDPManager() <GCDAsyncUdpSocketDelegate>
 
@@ -174,6 +174,8 @@ withFilterContext:(id)filterContext{
   NSDictionary *receiveMessage = [NSJSONSerialization JSONObjectWithData:data options:0 error:&e];
   if (e || !receiveMessage) {
     NSLog(@"Error: receiving data Remote Message:%@", [[NSString alloc] initWithData:data encoding:kCFStringEncodingUTF8]);
+    NSError *error = nil;
+    [_udpSocket receiveOnce:&error];
     return;
   }
 #ifdef NETWORK_LOGS
@@ -192,8 +194,16 @@ withFilterContext:(id)filterContext{
                               @"y" : @(y),
                               @"degree" : @(degree)
                             }
-                          }
-                          }];
+                          },
+                          @"sateliteLocations" : @[@{
+                              @"sateliteNumber" : @(1),
+                              @"coordinates" : @{
+                                  @"x" : @(20),
+                                  @"y" : @(20),
+                                  @"degree" : @(0)
+                              }
+                          }]
+                      }];
       [_receivedPackets setObject:d forKey:d.id];
       
       if ([_receivedPackets count] % 2) {

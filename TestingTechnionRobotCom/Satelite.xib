@@ -14,17 +14,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="0b5-nH-y9r">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="0b5-nH-y9r">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="0b5-nH-y9r" secondAttribute="trailing" id="MzB-Rd-9oP"/>
-                <constraint firstItem="0b5-nH-y9r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hUN-13-bS6"/>
-                <constraint firstAttribute="bottom" secondItem="0b5-nH-y9r" secondAttribute="bottom" id="t24-9z-ato"/>
-                <constraint firstItem="0b5-nH-y9r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="y9j-fn-xuT"/>
-            </constraints>
+            <connections>
+                <outlet property="sateliteImage" destination="0b5-nH-y9r" id="1Mx-mS-ZcI"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>

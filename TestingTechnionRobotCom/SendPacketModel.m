@@ -9,9 +9,10 @@
 #import "NSDictionary+Utils.h"
 #import "SendPacketModel.h"
 #import "NetworkUtils.h"
+#import "ParseJSONProtocol.h"
 
 
-@interface SendPacketModel()
+@interface SendPacketModel() <ParseJSONProtocol>
 
 @property (nonatomic, strong) NSNumber *sateliteNumber;
 @property (nonatomic, strong) NSString *message;
@@ -24,8 +25,24 @@ static NSHashTable *debug_packetGenerated;
 
 @implementation SendPacketModel
 
+-(NSDictionary *)json {
+  return @{
+           @"sateliteNumber" : _sateliteNumber ? : [NSNull null],
+           @"ipAddress" : [NetworkUtils getIPAddress] ? : [NSNull null],
+           @"message" : _message ? : [NSNull null]
+           };
+}
+
++(BOOL)validateJSON:(NSDictionary *)dictionary {
+  return NO;
+}
+
++(instancetype)newWithJson:(NSDictionary *)dictionary {
+  return nil;
+}
+
 -(NSString *)description {
-  return [SendPacketModel debugDescription];
+  return [self debugDescription];
 }
 
 -(NSString *)debugDescription {

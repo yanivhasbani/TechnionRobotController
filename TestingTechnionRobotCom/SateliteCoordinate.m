@@ -7,14 +7,14 @@
 //
 
 #import "SateliteCoordinate.h"
-#import "parseJSONProtocol.h"
+#import "ParseJSONProtocol.h"
 #import "NSDictionary+Utils.h"
 
 @interface SateliteCoordinate()
 
 @end
 
-@interface SateliteCoordinate() <parseJSONProtocol>
+@interface SateliteCoordinate() <ParseJSONProtocol>
 
 +(BOOL)validateJSON:(NSDictionary *)dictionary;
 

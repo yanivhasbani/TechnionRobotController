@@ -116,27 +116,26 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
   for (MySateliteView *v in _satelites) {
     v.hidden = YES;
     [v removeFromSuperview];
-    [_satelites removeObject:v];
   }
+  
+  [_satelites removeAllObjects];
 }
 
 -(void)loadLocations:(MapModel *)locations {
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
+  if (!_satelites) {
     _satelites = [NSMutableArray new];
-  });
+  };
   
-  [self createSateliteViewFromLocation:locations.myLocation];
+  [self createSateliteViewFromLocation:locations.myLocation myLocation:YES];
   
   for (SateliteLocation *l in locations.otherLocations) {
-    [self createSateliteViewFromLocation:l];
+    [self createSateliteViewFromLocation:l myLocation:NO];
   }
 }
 
 #pragma mark -
 #pragma mark SateliteCreation
--(void)createSateliteViewFromLocation:(SateliteLocation *)location {
-  CGPoint center = [self createPointFromLocation:location];
+-(void)createSateliteViewFromLocation:(SateliteLocation *)location myLocation:(BOOL)myLocation{
   MySateliteView *locationView;
   for (MySateliteView *v in _satelites) {
     if (v.tag == location.sateliteNumber.integerValue) {
@@ -145,43 +144,19 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
     }
   }
   if (!locationView) {
-    locationView = [MySateliteView newWithFrame:CGRectMake(center.x - 15, center.y - 15, 30, 30)];
-    [locationView rotate:location.coordinates.degree];
-    locationView.tag = location.sateliteNumber.integerValue;
-    
+    locationView = [MySateliteView newWithLocation:location
+                                        myLocation:myLocation];
     [_satelites addObject:locationView];
-    [UIView animateWithDuration:0.7 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
       [self addSubview:locationView];
     }];
   } else {
-    if ([locationView needsNewCenter:location.coordinates]) {
-      [UIView animateWithDuration:0.2 animations:^{
-        locationView.bounds = CGRectMake(0, 0, 30, 30);
-        locationView.center = center;
-        locationView.superview.clipsToBounds = YES;
-      }];
-    }
-    if ([locationView needsRotate:location.coordinates]) {
-      [locationView rotate:location.coordinates.degree];
-    }
+    [locationView update:location];
   }
 }
 
 #pragma mark -
 #pragma mark SateliteDrawing
--(CGPoint)createPointFromLocation:(SateliteLocation *)location {
-  int newX = xOrigin + xOffset * location.coordinates.x + 15;
-  int newY = yOrigin + yOffset * location.coordinates.y + 15;
-  
-  if (newX > xOrigin + axisSize) {
-    newX = xOrigin + axisSize;
-  }
-  
-  if (newY > yOrigin + axisSize) {
-    newY = yOrigin + axisSize;
-  }
-  
-  return CGPointMake(newX, newY);
-}
+
 
 @end

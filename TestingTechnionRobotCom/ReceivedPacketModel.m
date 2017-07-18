@@ -7,11 +7,11 @@
 //
 
 #import "ReceivedPacketModel.h"
-#import "parseJSONProtocol.h"
+#import "ParseJSONProtocol.h"
 #import "SateliteLocation.h"
 #import "NSArray+JSON.h"
 
-@interface ReceivedPacketModel() <parseJSONProtocol>
+@interface ReceivedPacketModel() <ParseJSONProtocol>
 
 @property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) SateliteLocation *myLocation;
@@ -67,8 +67,9 @@
   NSMutableArray *others = [NSMutableArray new];
   for (NSDictionary *d in dictionary[@"sateliteLocations"]) {
     SateliteLocation *l = [SateliteLocation newWithJson:d];
-    
-    [others addObject:l];
+    if (l) {
+      [others addObject:l];
+    }
   }
   
   m.otherLocations = [others copy];
