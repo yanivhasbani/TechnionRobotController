@@ -15,7 +15,7 @@
                                                                            message:message
                                                                     preferredStyle:UIAlertControllerStyleAlert];
   //We add buttons to the alert controller by creating UIAlertActions:
-  UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+  UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"OK"
                                                      style:UIAlertActionStyleDefault
                                                    handler:nil];
   [alertController addAction:actionOk];

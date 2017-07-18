@@ -31,8 +31,14 @@ static double _numberOfCommands;
   if (_numberOfCommands == 0) {
     _numberOfCommandsField.delegate = self;
     _numberOfCommandsField.returnKeyType = UIReturnKeyDone;
+    NSNumber *previousNumberOfCommands = [[NSUserDefaults standardUserDefaults] objectForKey:@"myNumberOfCommands"];
+    if (previousNumberOfCommands) {
+      _numberOfCommandsField.text = previousNumberOfCommands.stringValue;
+    }
   } else {
     _numberOfCommandsField.hidden = YES;
+    //Fetch cahced data
+    
     self.collectionView.hidden = NO;
     [self.collectionView reloadData];
   }
@@ -85,6 +91,8 @@ static double _numberOfCommands;
   self.collectionView.hidden = NO;
   self.numberOfCommandsField.hidden = YES;
   _numberOfCommands = self.numberOfCommandsField.text.integerValue;
+  
+  [[NSUserDefaults standardUserDefaults] setObject:@(_numberOfCommands) forKey:@"myNumberOfCommands"];
   [self.collectionView reloadData];
   return YES;
   

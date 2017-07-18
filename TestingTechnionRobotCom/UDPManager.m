@@ -161,15 +161,10 @@ static UDPManager *sharedManager;
 
 #pragma mark -
 #pragma mark GCDAsyncUdpSocketDelegate
-static int x;
-static int y;
-static double degree;
-
 -(void)udpSocket:(GCDAsyncUdpSocket *)sock
   didReceiveData:(NSData *)data
      fromAddress:(NSData *)address
 withFilterContext:(id)filterContext{
-  
   NSError *e;
   NSDictionary *receiveMessage = [NSJSONSerialization JSONObjectWithData:data options:0 error:&e];
   if (e || !receiveMessage) {
@@ -186,32 +181,7 @@ withFilterContext:(id)filterContext{
     if (p) {
       [_receivedPackets setObject:p forKey:p.id];
     } else {
-      ReceivedPacketModel *d = [ReceivedPacketModel newWithJson:@{
-                          @"myLocation" : @{
-                            @"sateliteNumber" : @(0),
-                            @"coordinates" : @{
-                              @"x" : @(x),
-                              @"y" : @(y),
-                              @"degree" : @(degree)
-                            }
-                          },
-                          @"sateliteLocations" : @[@{
-                              @"sateliteNumber" : @(1),
-                              @"coordinates" : @{
-                                  @"x" : @(20),
-                                  @"y" : @(20),
-                                  @"degree" : @(0)
-                              }
-                          }]
-                      }];
-      [_receivedPackets setObject:d forKey:d.id];
-      
-      if ([_receivedPackets count] % 2) {
-        x++;
-        y+=2;
-      } else {
-        degree += M_PI/12;
-      }
+        NSLog(@"Error: Socket receiving data That is not in protocol. data = %@",receiveMessage);
     }
   }
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([_intervalTime doubleValue] * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
