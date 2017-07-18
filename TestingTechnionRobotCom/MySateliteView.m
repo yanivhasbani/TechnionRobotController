@@ -47,14 +47,22 @@
 
 -(void)update:(SateliteLocation *)location {
   if ([self needsNewCenter:location.coordinates]) {
-    [UIView animateWithDuration:0.2 animations:^{
-      CGPoint center = [MySateliteView createPointFromLocation:location];
-      self.frame = CGRectMake(center.x - 15, center.y - 15, 30, 30);
-      self.superview.clipsToBounds = YES;
-    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [UIView animateWithDuration:0.2 animations:^{
+        CGPoint center = [MySateliteView createPointFromLocation:location];
+        self.frame = CGRectMake(center.x - 15, center.y - 15, 30, 30);
+        self.superview.clipsToBounds = YES;
+        [self layoutIfNeeded];
+      }];
+    });
   }
   if ([self needsRotate:location.coordinates]) {
-    [self rotate:location.coordinates.degree];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [UIView animateWithDuration:0.2 animations:^{
+        [self rotate:location.coordinates.degree];
+        [self layoutIfNeeded];
+      }];
+    });
   }
 }
 
@@ -90,8 +98,8 @@
 }
 
 +(CGPoint)createPointFromLocation:(SateliteLocation *)location {
-  double newX = xOrigin + xOffset * location.coordinates.x + 15;
-  double newY = yOrigin + yOffset * location.coordinates.y + 15;
+  double newX = xOrigin + (axisSize * location.coordinates.x)/4 + 15;
+  double newY = yOrigin + (axisSize * location.coordinates.y)/4 + 15;
   
   if (newX > xOrigin + axisSize) {
     newX = xOrigin + axisSize;

@@ -27,7 +27,7 @@ static NSHashTable *debug_packetGenerated;
 
 -(NSDictionary *)json {
   return @{
-           @"sateliteNumber" : _sateliteNumber ? : [NSNull null],
+           @"satelliteNumber" : _sateliteNumber ? : [NSNull null],
            @"ipAddress" : [NetworkUtils getIPAddress] ? : [NSNull null],
            @"message" : _message ? : [NSNull null]
            };
@@ -56,7 +56,7 @@ static NSHashTable *debug_packetGenerated;
 #endif
   
   return @{
-           @"sateliteNumber" : _sateliteNumber ? : [NSNull null],
+           @"satelliteNumber" : _sateliteNumber ? : [NSNull null],
            @"ipAddress" : [NetworkUtils getIPAddress] ? : [NSNull null],
            @"message" : _message ? : [NSNull null]
            };

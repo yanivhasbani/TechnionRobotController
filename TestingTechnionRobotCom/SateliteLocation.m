@@ -20,7 +20,7 @@
 
 -(NSDictionary *)json {
   return @{
-    @"sateliteNumber" : _sateliteNumber,
+    @"satelliteNumber" : _sateliteNumber,
     @"coordinates" : [_coordinates json]
     };
 }
@@ -31,7 +31,7 @@
 
 -(NSString *)debugDescription {
   return [@{
-           @"sateliteNumber" : _sateliteNumber,
+           @"satelliteNumber" : _sateliteNumber,
            @"coordinates" : [_coordinates json]
            } json];
 }
@@ -41,8 +41,8 @@
     return NO;
   }
   
-  if (!dictionary[@"sateliteNumber"] ||
-      ![dictionary[@"sateliteNumber"] isKindOfClass:[NSNumber class]]) {
+  if (!dictionary[@"satelliteNumber"] ||
+      ![dictionary[@"satelliteNumber"] isKindOfClass:[NSNumber class]]) {
     return NO;
   }
   
@@ -58,7 +58,7 @@
   SateliteLocation *s = [SateliteLocation new];
   
   s.coordinates = [SateliteCoordinate newWithJson:dictionary[@"coordinates"]];
-  s.sateliteNumber = dictionary[@"sateliteNumber"];
+  s.sateliteNumber = dictionary[@"satelliteNumber"];
   
   return s;
 }

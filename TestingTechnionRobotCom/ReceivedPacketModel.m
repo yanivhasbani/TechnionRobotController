@@ -45,11 +45,11 @@
     return NO;
   }
   
-  if (!dictionary[@"sateliteLocations"]) {
+  if (!dictionary[@"satelliteLocations"]) {
     NSLog(@"No other satelites location on object");
   }
   
-  if (![dictionary[@"sateliteLocations"] isKindOfClass:[NSArray class]]) {
+  if (![dictionary[@"satelliteLocations"] isKindOfClass:[NSArray class]]) {
     NSLog(@"Other satelites object is not an array. Obj = %@", dictionary);
   }
   
@@ -65,7 +65,7 @@
   m.myLocation = [SateliteLocation newWithJson:dictionary[@"myLocation"]];
   
   NSMutableArray *others = [NSMutableArray new];
-  for (NSDictionary *d in dictionary[@"sateliteLocations"]) {
+  for (NSDictionary *d in dictionary[@"satelliteLocations"]) {
     SateliteLocation *l = [SateliteLocation newWithJson:d];
     if (l) {
       [others addObject:l];

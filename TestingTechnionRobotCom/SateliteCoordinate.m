@@ -65,6 +65,7 @@
 
 +(instancetype)newWithJson:(NSDictionary *)dictionary {
   if (![self validateJSON:dictionary]) {
+    NSLog(@"Error: Validation coordinates error. dic = %@", dictionary);
     return nil;
   }
   

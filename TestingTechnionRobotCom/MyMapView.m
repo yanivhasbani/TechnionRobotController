@@ -19,8 +19,6 @@ int yLabelSize = 25;
 int axisSize;
 double xOrigin = 0;
 double yOrigin = 0;
-double xOffset;
-double yOffset;
 
 const double lineWidth = 5.0f;
 
@@ -51,9 +49,6 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
   } else {
     yOrigin = (axisYSize - axisSize) / 2;
   }
-  
-  xOffset = 0.02 * axisSize;
-  yOffset = 0.02 * axisSize;
 }
 
 -(void)drawLine:(CGContextRef)context

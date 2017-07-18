@@ -12,8 +12,16 @@
 typedef void(^connectionCompletionBlock)(NSError *err);
 typedef NSDictionary<NSNumber *, NSObject<UDPPacketProtocol> *> UDPDictionary;
 
+@protocol UDPDelegate <NSObject>
+
+-(void)gotPacket:(id<UDPPacketProtocol>)packet;
+
+@end
+
 @class SateliteLocation;
 @interface UDPManager : NSObject
+
+@property (nonatomic, weak) id<UDPDelegate> delegate;
 
 +(void)openConnectionForData:(NSString *)ipAddress
                      udpPort:(NSString *)udpPort
@@ -22,4 +30,6 @@ typedef NSDictionary<NSNumber *, NSObject<UDPPacketProtocol> *> UDPDictionary;
 
 +(UDPDictionary *)getReceivedPackets;
 +(void)sendPacket:(id<UDPPacketProtocol>)message;
+
++(instancetype)sharedManager;
 @end

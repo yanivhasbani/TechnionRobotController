@@ -41,6 +41,7 @@ typedef NSMutableDictionary<NSNumber *, id<UDPPacketProtocol>> UDPMutableDiction
 static UDPMutableDictionary *debug_varifiedSentPackets;
 static UDPMutableDictionary *debug_sentPackets;
 static UDPMutableDictionary *debug_receivedPackets;
+const int UDPReceivingPort = 5003;
 
 @implementation UDPManager
 
@@ -100,7 +101,7 @@ static UDPManager *sharedManager;
                   completion:(connectionCompletionBlock)completion {
   if (_udpSocket != nil){
     NSError *error = nil;
-    if (![_udpSocket bindToPort:[udpPort integerValue] error:&error])
+    if (![_udpSocket bindToPort:UDPReceivingPort error:&error])
     {
       NSLog(@"Error binding: %@", error);
       completion(error);
@@ -180,6 +181,9 @@ withFilterContext:(id)filterContext{
     ReceivedPacketModel *p = [ReceivedPacketModel newWithJson:receiveMessage];
     if (p) {
       [_receivedPackets setObject:p forKey:p.id];
+      if (_delegate && [_delegate respondsToSelector:@selector(gotPacket:)]) {
+        [_delegate gotPacket:p];
+      }
     } else {
         NSLog(@"Error: Socket receiving data That is not in protocol. data = %@",receiveMessage);
     }

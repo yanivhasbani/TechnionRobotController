@@ -145,7 +145,7 @@
                                     <action selector="backButtonPressed:" destination="vjC-q6-fJv" eventType="touchUpInside" id="OE8-FU-jkI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-Pa-RGZ">
+                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-Pa-RGZ">
                                 <rect key="frame" x="485" y="25" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="2aU-Vw-XbJ"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STF-Fx-OVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425.93703148425789" y="-1594.4000000000001"/>
+            <point key="canvasLocation" x="279" y="-1211"/>
         </scene>
         <!--PlayVC-->
         <scene sceneID="NLc-AZ-g7k">
