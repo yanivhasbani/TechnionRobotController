@@ -47,23 +47,19 @@
 
 -(void)update:(SateliteLocation *)location {
   if ([self needsNewCenter:location.coordinates]) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [UIView animateWithDuration:0.2 animations:^{
-        CGPoint center = [MySateliteView createPointFromLocation:location];
-        self.frame = CGRectMake(center.x - 15, center.y - 15, 30, 30);
-        self.superview.clipsToBounds = YES;
-        [self layoutIfNeeded];
-      }];
-    });
+//    [UIView animateWithDuration:0.2 animations:^{
+      CGPoint center = [MySateliteView createPointFromLocation:location];
+      self.frame = CGRectMake(center.x - 15, center.y - 15, 30, 30);
+      self.superview.clipsToBounds = YES;
+    
+//    }];
   }
   if ([self needsRotate:location.coordinates]) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [UIView animateWithDuration:0.2 animations:^{
-        [self rotate:location.coordinates.degree];
-        [self layoutIfNeeded];
-      }];
-    });
+//    [UIView animateWithDuration:0.2 animations:^{
+      [self rotate:location.coordinates.degree];
+//    }];
   }
+  [self layoutIfNeeded];
 }
 
 -(void)rotate:(double)rads {

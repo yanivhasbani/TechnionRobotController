@@ -105,8 +105,8 @@ static double _numberOfCommands;
 #pragma mark <UICollectionViewDelegate>
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  CustomCommandCell *c = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-  if (c) {
+  id c = [collectionView cellForItemAtIndexPath:indexPath];
+  if (c && [c isKindOfClass:[CustomCommandCell class]]) {
     [c sendCmdToServer:_sateliteNumber];
   }
 }

@@ -130,7 +130,7 @@ static UIType savedSate;
   dispatch_async(dispatch_get_global_queue(0, 0), ^{
     [UDPManager openConnectionForData:_ipAddress
                               udpPort:_udpPort
-                         intervalTime:@(0.5)
+                         intervalTime:@(0.1)
                            completion:^(NSError * err) {
                              if (err) {
                                NSLog(@"Error in opening connection. err = %@", err);

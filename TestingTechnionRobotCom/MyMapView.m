@@ -142,11 +142,15 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
     locationView = [MySateliteView newWithLocation:location
                                         myLocation:myLocation];
     [_satelites addObject:locationView];
-    [UIView animateWithDuration:0.2 animations:^{
-      [self addSubview:locationView];
-    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [UIView animateWithDuration:0.2 animations:^{
+        [self addSubview:locationView];
+      }];
+    });
   } else {
-    [locationView update:location];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [locationView update:location];
+    });
   }
 }
 
