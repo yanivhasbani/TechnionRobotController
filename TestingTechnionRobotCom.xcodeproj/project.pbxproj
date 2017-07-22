@@ -13,8 +13,8 @@
 		791988EE1F02DF2000C846EA /* CustomCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 791988ED1F02DF2000C846EA /* CustomCommandVC.m */; };
 		791989981F06665200C846EA /* UIView+InflateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989971F06665200C846EA /* UIView+InflateAnimation.m */; };
 		7919899B1F066DCB00C846EA /* SendPacketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7919899A1F066DCB00C846EA /* SendPacketModel.m */; };
-		791989A71F069A8D00C846EA /* SateliteCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989A61F069A8D00C846EA /* SateliteCoordinate.m */; };
-		791989AD1F069B8400C846EA /* SateliteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989AC1F069B8400C846EA /* SateliteLocation.m */; };
+		791989A71F069A8D00C846EA /* SatelliteCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989A61F069A8D00C846EA /* SatelliteCoordinate.m */; };
+		791989AD1F069B8400C846EA /* SatelliteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989AC1F069B8400C846EA /* SatelliteLocation.m */; };
 		791989B11F06AD0A00C846EA /* MapModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989B01F06AD0A00C846EA /* MapModel.m */; };
 		791989B41F06C4E600C846EA /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989B31F06C4E600C846EA /* NSDictionary+Utils.m */; };
 		791989B71F06C9C900C846EA /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 791989B61F06C9C900C846EA /* MapVC.m */; };
@@ -25,7 +25,11 @@
 		791E6F6E1DE1978200E6E431 /* TestingTechnionRobotComTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F6D1DE1978200E6E431 /* TestingTechnionRobotComTests.m */; };
 		791E6F791DE1978200E6E431 /* TestingTechnionRobotComUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E6F781DE1978200E6E431 /* TestingTechnionRobotComUITests.m */; };
 		792321D21F0A97D800B352E5 /* MyMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 792321D11F0A97D800B352E5 /* MyMapView.m */; };
-		792321D41F0A9A3500B352E5 /* Satelite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792321D31F0A9A3500B352E5 /* Satelite.xib */; };
+		792321D41F0A9A3500B352E5 /* Satellite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792321D31F0A9A3500B352E5 /* Satellite.xib */; };
+		7930B6AD1F209B38008261C6 /* DetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7930B6AC1F209B38008261C6 /* DetailsVC.m */; };
+		7930B6F51F2348C8008261C6 /* SplitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7930B6F41F2348C8008261C6 /* SplitVC.m */; };
+		7930B6F81F234CFD008261C6 /* MasterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7930B6F71F234CFD008261C6 /* MasterVC.m */; };
+		7930B6FB1F235DD2008261C6 /* SatelliteDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7930B6FA1F235DD2008261C6 /* SatelliteDetailsCell.m */; };
 		7961F78B1F0D1C8400E307F4 /* RuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7961F78A1F0D1C8400E307F4 /* RuntimeUtils.m */; };
 		7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7974E3FB1E58A2720064F720 /* Main.storyboard */; };
 		7977B9C01EFEDEEB004BBDE5 /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7977B9BF1EFEDEEB004BBDE5 /* Log.m */; };
@@ -81,10 +85,10 @@
 		791989991F066DCB00C846EA /* SendPacketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendPacketModel.h; sourceTree = "<group>"; };
 		7919899A1F066DCB00C846EA /* SendPacketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendPacketModel.m; sourceTree = "<group>"; };
 		7919899F1F06730F00C846EA /* udpPacketProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = udpPacketProtocol.h; sourceTree = "<group>"; };
-		791989A51F069A8D00C846EA /* SateliteCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SateliteCoordinate.h; sourceTree = "<group>"; };
-		791989A61F069A8D00C846EA /* SateliteCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SateliteCoordinate.m; sourceTree = "<group>"; };
-		791989AB1F069B8400C846EA /* SateliteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SateliteLocation.h; sourceTree = "<group>"; };
-		791989AC1F069B8400C846EA /* SateliteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SateliteLocation.m; sourceTree = "<group>"; };
+		791989A51F069A8D00C846EA /* SatelliteCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SatelliteCoordinate.h; sourceTree = "<group>"; };
+		791989A61F069A8D00C846EA /* SatelliteCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SatelliteCoordinate.m; sourceTree = "<group>"; };
+		791989AB1F069B8400C846EA /* SatelliteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SatelliteLocation.h; sourceTree = "<group>"; };
+		791989AC1F069B8400C846EA /* SatelliteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SatelliteLocation.m; sourceTree = "<group>"; };
 		791989AF1F06AD0A00C846EA /* MapModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapModel.h; sourceTree = "<group>"; };
 		791989B01F06AD0A00C846EA /* MapModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapModel.m; sourceTree = "<group>"; };
 		791989B21F06C4E600C846EA /* NSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
@@ -109,7 +113,15 @@
 		791E6F7A1DE1978200E6E431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		792321D01F0A97D800B352E5 /* MyMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapView.h; sourceTree = "<group>"; };
 		792321D11F0A97D800B352E5 /* MyMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapView.m; sourceTree = "<group>"; };
-		792321D31F0A9A3500B352E5 /* Satelite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Satelite.xib; sourceTree = "<group>"; };
+		792321D31F0A9A3500B352E5 /* Satellite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Satellite.xib; sourceTree = "<group>"; };
+		7930B6AB1F209B38008261C6 /* DetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsVC.h; sourceTree = "<group>"; };
+		7930B6AC1F209B38008261C6 /* DetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsVC.m; sourceTree = "<group>"; };
+		7930B6F31F2348C8008261C6 /* SplitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitVC.h; sourceTree = "<group>"; };
+		7930B6F41F2348C8008261C6 /* SplitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitVC.m; sourceTree = "<group>"; };
+		7930B6F61F234CFD008261C6 /* MasterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterVC.h; sourceTree = "<group>"; };
+		7930B6F71F234CFD008261C6 /* MasterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterVC.m; sourceTree = "<group>"; };
+		7930B6F91F235DD2008261C6 /* SatelliteDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SatelliteDetailsCell.h; sourceTree = "<group>"; };
+		7930B6FA1F235DD2008261C6 /* SatelliteDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SatelliteDetailsCell.m; sourceTree = "<group>"; };
 		7961F7891F0D1C8400E307F4 /* RuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeUtils.h; sourceTree = "<group>"; };
 		7961F78A1F0D1C8400E307F4 /* RuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeUtils.m; sourceTree = "<group>"; };
 		7974E3FB1E58A2720064F720 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -117,7 +129,7 @@
 		7977B9BF1EFEDEEB004BBDE5 /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
 		799785931F096D810017905E /* UIAlertController+MyAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+MyAlertController.h"; sourceTree = "<group>"; };
 		799785941F096D810017905E /* UIAlertController+MyAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+MyAlertController.m"; sourceTree = "<group>"; };
-		79AD89F91F0BF7A600389306 /* MySateliteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySateliteView.h; sourceTree = "<group>"; };
+		79AD89F91F0BF7A600389306 /* MySatelliteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySatelliteView.h; sourceTree = "<group>"; };
 		79AD89FA1F0BF7A600389306 /* MySateliteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySateliteView.m; sourceTree = "<group>"; };
 		79B919671F0CE6FE00EFE823 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		79BFB44F1EEFF881005E612D /* UDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPManager.h; sourceTree = "<group>"; };
@@ -228,10 +240,10 @@
 		791989A41F069A7500C846EA /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				791989A51F069A8D00C846EA /* SateliteCoordinate.h */,
-				791989A61F069A8D00C846EA /* SateliteCoordinate.m */,
-				791989AB1F069B8400C846EA /* SateliteLocation.h */,
-				791989AC1F069B8400C846EA /* SateliteLocation.m */,
+				791989A51F069A8D00C846EA /* SatelliteCoordinate.h */,
+				791989A61F069A8D00C846EA /* SatelliteCoordinate.m */,
+				791989AB1F069B8400C846EA /* SatelliteLocation.h */,
+				791989AC1F069B8400C846EA /* SatelliteLocation.m */,
 				791989AF1F06AD0A00C846EA /* MapModel.h */,
 				791989B01F06AD0A00C846EA /* MapModel.m */,
 			);
@@ -339,6 +351,12 @@
 				79CF1FB61F13C77200573202 /* LogVC.m */,
 				79CF1FBD1F13CBEF00573202 /* LogCell.h */,
 				79CF1FBE1F13CBEF00573202 /* LogCell.m */,
+				7930B6AB1F209B38008261C6 /* DetailsVC.h */,
+				7930B6AC1F209B38008261C6 /* DetailsVC.m */,
+				7930B6F31F2348C8008261C6 /* SplitVC.h */,
+				7930B6F41F2348C8008261C6 /* SplitVC.m */,
+				7930B6F61F234CFD008261C6 /* MasterVC.h */,
+				7930B6F71F234CFD008261C6 /* MasterVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -347,15 +365,17 @@
 			isa = PBXGroup;
 			children = (
 				7974E3FB1E58A2720064F720 /* Main.storyboard */,
-				792321D31F0A9A3500B352E5 /* Satelite.xib */,
+				792321D31F0A9A3500B352E5 /* Satellite.xib */,
 				791988E91F02DE6300C846EA /* CustomCommandCell.h */,
 				791988EA1F02DE6300C846EA /* CustomCommandCell.m */,
 				792321D01F0A97D800B352E5 /* MyMapView.h */,
 				792321D11F0A97D800B352E5 /* MyMapView.m */,
-				79AD89F91F0BF7A600389306 /* MySateliteView.h */,
+				79AD89F91F0BF7A600389306 /* MySatelliteView.h */,
 				79AD89FA1F0BF7A600389306 /* MySateliteView.m */,
 				799785931F096D810017905E /* UIAlertController+MyAlertController.h */,
 				799785941F096D810017905E /* UIAlertController+MyAlertController.m */,
+				7930B6F91F235DD2008261C6 /* SatelliteDetailsCell.h */,
+				7930B6FA1F235DD2008261C6 /* SatelliteDetailsCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -498,7 +518,7 @@
 				TargetAttributes = {
 					791E6F4F1DE1978200E6E431 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = SG9V4Q96YZ;
+						DevelopmentTeam = N49CRQ62AA;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -540,7 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */,
-				792321D41F0A9A3500B352E5 /* Satelite.xib in Resources */,
+				792321D41F0A9A3500B352E5 /* Satellite.xib in Resources */,
 				79B919681F0CE6FE00EFE823 /* assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,15 +727,19 @@
 				7961F78B1F0D1C8400E307F4 /* RuntimeUtils.m in Sources */,
 				791989B41F06C4E600C846EA /* NSDictionary+Utils.m in Sources */,
 				79AD89FB1F0BF7A600389306 /* MySateliteView.m in Sources */,
+				7930B6AD1F209B38008261C6 /* DetailsVC.m in Sources */,
+				7930B6F51F2348C8008261C6 /* SplitVC.m in Sources */,
 				7977B9C01EFEDEEB004BBDE5 /* Log.m in Sources */,
 				791988EB1F02DE6300C846EA /* CustomCommandCell.m in Sources */,
 				7919899B1F066DCB00C846EA /* SendPacketModel.m in Sources */,
 				791988EE1F02DF2000C846EA /* CustomCommandVC.m in Sources */,
 				792321D21F0A97D800B352E5 /* MyMapView.m in Sources */,
+				7930B6F81F234CFD008261C6 /* MasterVC.m in Sources */,
 				791E6F5B1DE1978200E6E431 /* MainVC.m in Sources */,
-				791989AD1F069B8400C846EA /* SateliteLocation.m in Sources */,
+				791989AD1F069B8400C846EA /* SatelliteLocation.m in Sources */,
 				79FF4A041EFEA33C002D394D /* PlayVC.m in Sources */,
 				79FF4A081EFEA3B9002D394D /* MovementManager.m in Sources */,
+				7930B6FB1F235DD2008261C6 /* SatelliteDetailsCell.m in Sources */,
 				791E6F581DE1978200E6E431 /* AppDelegate.m in Sources */,
 				79FF48F71EF99088002D394D /* NetworkUtils.m in Sources */,
 				79FF4A0C1EFEAF8B002D394D /* MovementConsts.m in Sources */,
@@ -724,7 +748,7 @@
 				791989981F06665200C846EA /* UIView+InflateAnimation.m in Sources */,
 				799785951F096D810017905E /* UIAlertController+MyAlertController.m in Sources */,
 				791989B11F06AD0A00C846EA /* MapModel.m in Sources */,
-				791989A71F069A8D00C846EA /* SateliteCoordinate.m in Sources */,
+				791989A71F069A8D00C846EA /* SatelliteCoordinate.m in Sources */,
 				79CF1FC41F13D66700573202 /* NSArray+JSON.m in Sources */,
 				79CF1FB71F13C77200573202 /* LogVC.m in Sources */,
 				79BFB4511EEFF881005E612D /* UDPManager.m in Sources */,
@@ -869,11 +893,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
-				DEVELOPMENT_TEAM = SG9V4Q96YZ;
+				DEVELOPMENT_TEAM = N49CRQ62AA;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Technion.TestingTechnionRobotCom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Technion.RobotController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -886,11 +910,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
-				DEVELOPMENT_TEAM = SG9V4Q96YZ;
+				DEVELOPMENT_TEAM = N49CRQ62AA;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Technion.TestingTechnionRobotCom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Technion.RobotController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

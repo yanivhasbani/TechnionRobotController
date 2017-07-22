@@ -1,26 +1,26 @@
 //
-//  SateliteLocation.m
+//  SatelliteLocation.m
 //  TestingTechnionRobotCom
 //
 //  Created by Yaniv Hasbani on 6/30/17.
 //  Copyright © 2017 Yaniv. All rights reserved.
 //
 
-#import "SateliteLocation.h"
-#import "SateliteCoordinate.h"
+#import "SatelliteLocation.h"
+#import "SatelliteCoordinate.h"
 #import "udpPacketProtocol.h"
 #import "ParseJSONProtocol.h"
 #import "NSDictionary+Utils.h"
 
-@interface SateliteLocation() <ParseJSONProtocol>
+@interface SatelliteLocation() <ParseJSONProtocol>
 
 @end
 
-@implementation SateliteLocation
+@implementation SatelliteLocation
 
 -(NSDictionary *)json {
   return @{
-    @"satelliteNumber" : _sateliteNumber,
+    @"satelliteNumber" : _satelliteNumber,
     @"coordinates" : [_coordinates json]
     };
 }
@@ -31,8 +31,9 @@
 
 -(NSString *)debugDescription {
   return [@{
-           @"satelliteNumber" : _sateliteNumber,
-           @"coordinates" : [_coordinates json]
+           @"satelliteNumber" : _satelliteNumber,
+           @"coordinates" : [_coordinates json],
+           @"data" : _data
            } json];
 }
 
@@ -51,14 +52,15 @@
 
 +(instancetype)newWithJson:(NSDictionary *)dictionary {
   if (![self validateJSON:dictionary]) {
-    NSLog(@"Error while validating SateliteLocation. returning nil");
+    NSLog(@"Error while validating SatelliteLocation. returning nil");
     return nil;
   }
   
-  SateliteLocation *s = [SateliteLocation new];
+  SatelliteLocation *s = [SatelliteLocation new];
   
-  s.coordinates = [SateliteCoordinate newWithJson:dictionary[@"coordinates"]];
-  s.sateliteNumber = dictionary[@"satelliteNumber"];
+  s.coordinates = [SatelliteCoordinate newWithJson:dictionary[@"coordinates"]];
+  s.satelliteNumber = dictionary[@"satelliteNumber"];
+  s.data = dictionary[@"data"];
   
   return s;
 }

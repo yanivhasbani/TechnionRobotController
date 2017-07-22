@@ -24,8 +24,8 @@
   self.layer.cornerRadius = 2.5;
 }
 
--(void)sendCmdToServer:(NSNumber *)sateliteNumber {
-  SendPacketModel *p = [SendPacketModel newWithMessage:self.commandLabel.text sateliteNumber:sateliteNumber];
+-(void)sendCmdToServer {
+  SendPacketModel *p = [SendPacketModel newWithMessage:self.commandLabel.text];
   
   [UDPManager sendPacket:p];
 }

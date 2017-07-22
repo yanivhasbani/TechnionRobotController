@@ -8,7 +8,7 @@
 
 #import "UDPManager.h"
 #import "MapModel.h"
-#import "SateliteLocation.h"
+#import "SatelliteLocation.h"
 #import "ReceivedPacketModel.h"
 #import "UIAlertController+MyAlertController.h"
 #import "NSDictionary+Utils.h"

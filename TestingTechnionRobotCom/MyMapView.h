@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class MapModel;
+@class MapModel, SatelliteLocation;
+
 @interface MyMapView : UIView
 
--(void)reset;
 -(void)loadLocations:(MapModel *)locations;
+-(NSArray *)getAllSatelliteLocations;
+
+@end
+
+extern int axisSize;
 
 extern double xOrigin;
 extern double yOrigin;
-extern double xOffset;
-extern double yOffset;
-extern int axisSize;
-
-@end

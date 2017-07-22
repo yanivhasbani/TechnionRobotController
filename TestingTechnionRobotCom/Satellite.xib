@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MySateliteView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MySatelliteView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -21,7 +21,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="sateliteImage" destination="0b5-nH-y9r" id="1Mx-mS-ZcI"/>
+                <outlet property="satelliteImage" destination="0b5-nH-y9r" id="a9P-gd-UPS"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>

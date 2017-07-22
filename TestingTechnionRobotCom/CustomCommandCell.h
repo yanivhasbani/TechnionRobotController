@@ -11,6 +11,6 @@
 @interface CustomCommandCell : UICollectionViewCell
 
 -(void)configureCell:(NSString *)cmdName;
--(void)sendCmdToServer:(NSNumber *)sateliteNumber;
+-(void)sendCmdToServer;
 
 @end

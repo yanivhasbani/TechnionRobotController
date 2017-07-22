@@ -8,31 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, SateliteCommand) {
-  SateliteCommandStop,
-  SateliteCommandUp,
-  SateliteCommandDown,
-  SateliteCommandLeft,
-  SateliteCommandRight,
-  SateliteCommandRotateLeft,
-  SateliteCommandRotateRight
+typedef NS_ENUM(NSUInteger, SatelliteCommand) {
+  SatelliteCommandStop,
+  SatelliteCommandUp,
+  SatelliteCommandDown,
+  SatelliteCommandLeft,
+  SatelliteCommandRight,
+  SatelliteCommandRotateLeft,
+  SatelliteCommandRotateRight
 };
 
-static inline NSString * cmdToString(SateliteCommand cmd) {
+static inline NSString * cmdToString(SatelliteCommand cmd) {
   switch (cmd) {
-    case SateliteCommandStop:
+    case SatelliteCommandStop:
       return @"Stop";
-    case SateliteCommandUp:
+    case SatelliteCommandUp:
       return @"Up";
-    case SateliteCommandDown:
+    case SatelliteCommandDown:
       return @"Down";
-    case SateliteCommandLeft:
+    case SatelliteCommandLeft:
       return @"Left";
-    case SateliteCommandRight:
+    case SatelliteCommandRight:
       return @"Right";
-    case SateliteCommandRotateLeft:
+    case SatelliteCommandRotateLeft:
       return @"RotateLeft";
-    case SateliteCommandRotateRight:
+    case SatelliteCommandRotateRight:
       return @"RotateRight";
   }
 }

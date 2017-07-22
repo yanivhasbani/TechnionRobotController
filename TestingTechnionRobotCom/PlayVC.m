@@ -38,6 +38,8 @@ typedef NS_ENUM(NSUInteger, ButtonType) {
 @property (strong, nonatomic) IBOutlet UIButton *rotateRight;
 @property (strong, nonatomic) IBOutlet UIButton *redButtonImage;
 
+@property (nonatomic, strong) NSUUID *currentMovementID;
+
 @property (nonatomic, assign) UIType uiType;
 
 @end
@@ -51,7 +53,7 @@ static UIType savedSate;
 }
 
 -(void)setUiType:(UIType)type {
-  if (type == UITypeGyro) {
+  if (type == UITypeAccelerator) {
     //Start Gyro measurement
     [self.view removeSwipeGestures];
     [self.view removeTapGestures];
@@ -101,13 +103,13 @@ static UIType savedSate;
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  if (savedSate != UITypeGyroNone) {
+  if (savedSate != UITypeNone) {
     self.uiType = savedSate;
   }
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
-  if (_uiType == UITypeGyro) {
+  if (_uiType == UITypeAccelerator) {
     //Start Gyro measurement
     [self stopGyro];
   } else if (_uiType == UITypeJoystick) {
@@ -130,7 +132,7 @@ static UIType savedSate;
   dispatch_async(dispatch_get_global_queue(0, 0), ^{
     [UDPManager openConnectionForData:_ipAddress
                               udpPort:_udpPort
-                         intervalTime:@(0.1)
+                           resendTime:_sentFreq
                            completion:^(NSError * err) {
                              if (err) {
                                NSLog(@"Error in opening connection. err = %@", err);
@@ -140,23 +142,15 @@ static UIType savedSate;
                                }
                              } else {
                                //First command sent is stop
-                               [self sendNextCommandToSatelite:SateliteCommandStop];
+                               [self sendNextCommandToSatellite:SatelliteCommandStop];
                              }
                            }];
   });
 }
 
-//API
-//-(NSString *)receiveNextDataFromSatelite {
-//  NSString *baseCmd = [UDPManager getPacket];
-//  NSLog(@"Got cmd from base. cmd = %@", baseCmd);
-//  
-//  return baseCmd;
-//}
-
--(void)sendNextCommandToSatelite:(SateliteCommand)cmd {
-  SendPacketModel *p = [SendPacketModel newWithMessage:cmdToString(cmd) sateliteNumber:_sateliteNumber];
-  [UDPManager  sendPacket:p];
+-(void)sendNextCommandToSatellite:(SatelliteCommand)cmd {
+  SendPacketModel *p = [SendPacketModel newWithMessage:cmdToString(cmd)];
+  [UDPManager sendPacket:p];
 }
 
 
@@ -225,7 +219,7 @@ static UIType savedSate;
   
   //  [self hideButtonsExcept:ButtonTypeLeft];
   
-  [self sendNextCommandToSatelite:SateliteCommandLeft];
+  [self sendNextCommandToSatellite:SatelliteCommandLeft];
   
   //  [_leftArrow shakeLeftArrow];
 }
@@ -236,7 +230,7 @@ static UIType savedSate;
   
   //  [self hideButtonsExcept:ButtonTypeRight];
   
-  [self sendNextCommandToSatelite:SateliteCommandRight];
+  [self sendNextCommandToSatellite:SatelliteCommandRight];
   
   //  [_rightArrow shakeRightArrow];
 }
@@ -247,7 +241,7 @@ static UIType savedSate;
   
   //  [self hideButtonsExcept:ButtonTypeUp];
   
-  [self sendNextCommandToSatelite:SateliteCommandUp];
+  [self sendNextCommandToSatellite:SatelliteCommandUp];
   
   //  [_upArrow shakeUpArrow];
 }
@@ -258,7 +252,7 @@ static UIType savedSate;
   
   //  [self hideButtonsExcept:ButtonTypeDown];
   
-  [self sendNextCommandToSatelite:SateliteCommandDown];
+  [self sendNextCommandToSatellite:SatelliteCommandDown];
   
   //  [_downArrow shakeDownArrow];
 }
@@ -273,7 +267,7 @@ static UIType savedSate;
     [self removeAllAnimations];
     [self.view addSwipeGestures];
     
-    [self sendNextCommandToSatelite:SateliteCommandStop];
+    [self sendNextCommandToSatellite:SatelliteCommandStop];
     
     [self showAllButtons];
   }
@@ -281,9 +275,9 @@ static UIType savedSate;
 
 -(void)handleHold:(UIButton *)sender {
   if (sender == _rotateLeft) {
-    [self sendNextCommandToSatelite:SateliteCommandRotateLeft];
+    [self sendNextCommandToSatellite:SatelliteCommandRotateLeft];
   } else if (sender == _rotateRight) {
-    [self sendNextCommandToSatelite:SateliteCommandRotateRight];
+    [self sendNextCommandToSatellite:SatelliteCommandRotateRight];
   } else if ([_leftArrow isEqual:sender]) {
     [_leftArrow setUserInteractionEnabled:NO];
     [self.view removeSwipeGestures];
@@ -320,37 +314,50 @@ static UIType savedSate;
 
 #pragma mark -
 #pragma mark MovementDelegate
--(void)movementOccured:(SateliteCommand)cmd {
-  [self sendNextCommandToSatelite:cmd];
+-(void)repeatinglySend:(SatelliteCommand)cmd {
+  __block NSUUID *blockCurrent = [NSUUID new];
+  __block SatelliteCommand blockCMD = cmd;
+  _currentMovementID = blockCurrent;
+  [self sendNextCommandToSatellite:cmd];
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    if (blockCurrent == _currentMovementID) {
+      if (blockCMD != SatelliteCommandStop) {
+        [self repeatinglySend:blockCMD];
+      }
+    }
+  });
+}
+-(void)movementOccured:(SatelliteCommand)cmd {
+  [self repeatinglySend:cmd];
   [self updateUI:cmd];
 }
 
--(void)updateUI:(SateliteCommand)cmd {
+-(void)updateUI:(SatelliteCommand)cmd {
   UIButton *shaker;
   SEL f;
   switch (cmd) {
-    case SateliteCommandStop:
+    case SatelliteCommandStop:
       [self removeAllAnimations];
       [self showAllButtons];
       shaker = nil;
       f = NULL;
       break;
-    case SateliteCommandUp:
+    case SatelliteCommandUp:
       [self hideButtonsExcept:ButtonTypeUp];
       shaker = _upArrow;
       f = @selector(shakeUpArrow);
       break;
-    case SateliteCommandLeft:
+    case SatelliteCommandLeft:
       [self hideButtonsExcept:ButtonTypeLeft];
       shaker = _leftArrow;
       f = @selector(shakeLeftArrowFromCenter);
       break;
-    case SateliteCommandRight:
+    case SatelliteCommandRight:
       [self hideButtonsExcept:ButtonTypeRight];
       shaker = _rightArrow;
       f = @selector(shakeRightArrowFromCenter);
       break;
-    case SateliteCommandDown:
+    case SatelliteCommandDown:
       [self hideButtonsExcept:ButtonTypeDown];
       shaker = _downArrow;
       f = @selector(shakeDownArrowFromCenter);
@@ -372,7 +379,7 @@ static UIType savedSate;
 #pragma mark Picker
 - (IBAction)segmentChange:(id)sender {
   if (_uiSegment.selectedSegmentIndex == 0) {
-    self.uiType = UITypeGyro;
+    self.uiType = UITypeAccelerator;
   } else if (_uiSegment.selectedSegmentIndex == 1) {
     self.uiType = UITypeJoystick;
   }
@@ -382,8 +389,7 @@ static UIType savedSate;
 #pragma mark CustomCommandVC display
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSNumber *)sender {
   if ([segue.destinationViewController isKindOfClass:[CustomCommandVC class]]) {
-    CustomCommandVC *ccvc = (CustomCommandVC *)segue.destinationViewController;
-    ccvc.sateliteNumber = _sateliteNumber;
+    
   }
 }
 
@@ -393,7 +399,7 @@ static UIType savedSate;
   if ([touch view] == self.view && touches.count > 1)
   {
     //More than two finger touched the screen, load configurator
-    [self performSegueWithIdentifier:@"CustomCommandVC" sender:_sateliteNumber];
+    [self performSegueWithIdentifier:@"CustomCommandVC" sender:nil];
   }
 }
 

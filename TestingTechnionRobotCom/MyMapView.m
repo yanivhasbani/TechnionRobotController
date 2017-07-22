@@ -7,9 +7,9 @@
 //
 
 #import "MyMapView.h"
-#import "MySateliteView.h"
-#import "SateliteLocation.h"
-#import "SateliteCoordinate.h"
+#import "MySatelliteView.h"
+#import "SatelliteLocation.h"
+#import "SatelliteCoordinate.h"
 #import "UIView+Gestures.h"
 #import "MapModel.h"
 
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
 
 @interface MyMapView() <GestureDelegate>
 
-@property (nonatomic, strong) NSMutableArray<MySateliteView *> *satelites;
+@property (nonatomic, strong) NSMutableArray<MySatelliteView *> *satellites;
 
 @end
 
@@ -107,41 +107,41 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
 
 #pragma mark -
 #pragma mark API
--(void)reset {
-  for (MySateliteView *v in _satelites) {
-    v.hidden = YES;
-    [v removeFromSuperview];
-  }
-  
-  [_satelites removeAllObjects];
-}
-
 -(void)loadLocations:(MapModel *)locations {
-  if (!_satelites) {
-    _satelites = [NSMutableArray new];
+  if (!_satellites) {
+    _satellites = [NSMutableArray new];
   };
   
-  [self createSateliteViewFromLocation:locations.myLocation myLocation:YES];
+  [self createSatelliteViewFromLocation:locations.myLocation myLocation:YES];
   
-  for (SateliteLocation *l in locations.otherLocations) {
-    [self createSateliteViewFromLocation:l myLocation:NO];
+  for (SatelliteLocation *l in locations.otherLocations) {
+    [self createSatelliteViewFromLocation:l myLocation:NO];
   }
+}
+
+-(NSArray *)getAllSatelliteLocations {
+  NSMutableArray *a = [NSMutableArray new];
+  for (MySatelliteView *sv in _satellites) {
+    [a addObject:sv.currentLocation];
+  }
+  
+  return [a copy];
 }
 
 #pragma mark -
-#pragma mark SateliteCreation
--(void)createSateliteViewFromLocation:(SateliteLocation *)location myLocation:(BOOL)myLocation{
-  MySateliteView *locationView;
-  for (MySateliteView *v in _satelites) {
-    if (v.tag == location.sateliteNumber.integerValue) {
+#pragma mark SatelliteCreation
+-(void)createSatelliteViewFromLocation:(SatelliteLocation *)location myLocation:(BOOL)myLocation {
+  MySatelliteView *locationView;
+  for (MySatelliteView *v in _satellites) {
+    if (v.tag == location.satelliteNumber.integerValue) {
       locationView = v;
       break;
     }
   }
   if (!locationView) {
-    locationView = [MySateliteView newWithLocation:location
+    locationView = [MySatelliteView newWithLocation:location
                                         myLocation:myLocation];
-    [_satelites addObject:locationView];
+    [_satellites addObject:locationView];
     dispatch_async(dispatch_get_main_queue(), ^{
       [UIView animateWithDuration:0.2 animations:^{
         [self addSubview:locationView];
@@ -153,9 +153,4 @@ typedef NS_ENUM(NSUInteger, AxisDirection) {
     });
   }
 }
-
-#pragma mark -
-#pragma mark SateliteDrawing
-
-
 @end

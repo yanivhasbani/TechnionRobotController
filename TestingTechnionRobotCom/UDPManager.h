@@ -18,14 +18,14 @@ typedef NSDictionary<NSNumber *, NSObject<UDPPacketProtocol> *> UDPDictionary;
 
 @end
 
-@class SateliteLocation;
+@class SatelliteLocation;
 @interface UDPManager : NSObject
 
 @property (nonatomic, weak) id<UDPDelegate> delegate;
 
 +(void)openConnectionForData:(NSString *)ipAddress
                      udpPort:(NSString *)udpPort
-                intervalTime:(NSNumber *)intervalTime
+                  resendTime:(NSNumber *)resendTime
                   completion:(connectionCompletionBlock)completion;
 
 +(UDPDictionary *)getReceivedPackets;

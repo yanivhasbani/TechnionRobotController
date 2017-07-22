@@ -107,7 +107,7 @@ static double _numberOfCommands;
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   id c = [collectionView cellForItemAtIndexPath:indexPath];
   if (c && [c isKindOfClass:[CustomCommandCell class]]) {
-    [c sendCmdToServer:_sateliteNumber];
+    [c sendCmdToServer];
   }
 }
 

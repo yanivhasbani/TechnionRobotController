@@ -1,26 +1,26 @@
 //
-//  SateliteCoordinate.m
+//  SatelliteCoordinate.m
 //  TestingTechnionRobotCom
 //
 //  Created by Yaniv Hasbani on 6/30/17.
 //  Copyright © 2017 Yaniv. All rights reserved.
 //
 
-#import "SateliteCoordinate.h"
+#import "SatelliteCoordinate.h"
 #import "ParseJSONProtocol.h"
 #import "NSDictionary+Utils.h"
 
-@interface SateliteCoordinate()
+@interface SatelliteCoordinate()
 
 @end
 
-@interface SateliteCoordinate() <ParseJSONProtocol>
+@interface SatelliteCoordinate() <ParseJSONProtocol>
 
 +(BOOL)validateJSON:(NSDictionary *)dictionary;
 
 @end
 
-@implementation SateliteCoordinate
+@implementation SatelliteCoordinate
 
 -(NSDictionary *)json {
   return @{
@@ -73,7 +73,7 @@
   double y = [(NSNumber *)dictionary[@"y"] doubleValue];
   double degree = [(NSNumber *)dictionary[@"degree"] doubleValue];
   
-  SateliteCoordinate *sl = [SateliteCoordinate new];
+  SatelliteCoordinate *sl = [SatelliteCoordinate new];
   sl.x = x;
   sl.y = y;
   sl.degree = degree;

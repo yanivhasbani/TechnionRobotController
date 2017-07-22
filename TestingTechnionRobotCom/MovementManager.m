@@ -11,7 +11,6 @@
 
 @interface MovementManager() <MovementIdentifierDelegate>
 
-//int =  SateliteCommand
 @property (nonatomic, strong) NSNumber *lastMove;
 @property (nonatomic, strong) MovementIdentifier *movementIdentifier;
 
@@ -44,87 +43,56 @@ static MovementManager* movementManager;
 #pragma mark -
 #pragma mark CoordinateDelegate
 -(void)S {
-  if (![_lastMove isEqualToNumber:@(SateliteCommandStop)]) {
-      [self.delegate movementOccured:SateliteCommandStop];
-    _lastMove = @(SateliteCommandStop);
+  if (![_lastMove isEqualToNumber:@(SatelliteCommandStop)]) {
+      [self.delegate movementOccured:SatelliteCommandStop];
+    _lastMove = @(SatelliteCommandStop);
   }
 }
 
--(void)RR {
-  if ([_lastMove integerValue] == SateliteCommandLeft) {
-    [self S];
-  }
-  
-  [self R];
-}
 -(void)R {
-  if ([_lastMove integerValue] == SateliteCommandLeft) {
+  if ([_lastMove integerValue] == SatelliteCommandLeft) {
     //If last position was left, stop
     return [self S];
-  } else if ([_lastMove integerValue] == SateliteCommandRight) {
+  } else if ([_lastMove integerValue] == SatelliteCommandRight) {
     return;
   }
   
-  _lastMove = @(SateliteCommandRight);
-  [self.delegate movementOccured:SateliteCommandRight];
+  _lastMove = @(SatelliteCommandRight);
+  [self.delegate movementOccured:SatelliteCommandRight];
 }
 
 -(void)L {
-  if ([_lastMove integerValue] == SateliteCommandRight) {
+  if ([_lastMove integerValue] == SatelliteCommandRight) {
     return [self S];
-  } else if ([_lastMove integerValue] == SateliteCommandLeft) {
+  } else if ([_lastMove integerValue] == SatelliteCommandLeft) {
     return;
   }
   
-  _lastMove = @(SateliteCommandLeft);
-  [self.delegate movementOccured:SateliteCommandLeft];
-}
-
--(void)LL {
-  if ([_lastMove integerValue] == SateliteCommandRight) {
-    [self S];
-  }
-  
-  return [self L];
-}
-
--(void)UU {
-  if ([_lastMove integerValue] == SateliteCommandDown) {
-    [self S];
-  }
-  
-  return [self U];
+  _lastMove = @(SatelliteCommandLeft);
+  [self.delegate movementOccured:SatelliteCommandLeft];
 }
 
 -(void)U {
-  if ([_lastMove integerValue] == SateliteCommandDown) {
+  if ([_lastMove integerValue] == SatelliteCommandDown) {
     return [self S];
-  } else if ([_lastMove integerValue] == SateliteCommandUp) {
+  } else if ([_lastMove integerValue] == SatelliteCommandUp) {
     return;
   }
   
-  [self.delegate movementOccured:SateliteCommandUp];
-  _lastMove = @(SateliteCommandUp);
-}
-
--(void)DD {
-  if ([_lastMove integerValue] == SateliteCommandUp) {
-    [self S];
-  }
-  
-  return [self D];
+  [self.delegate movementOccured:SatelliteCommandUp];
+  _lastMove = @(SatelliteCommandUp);
 }
 
 -(void)D {
-  if ([_lastMove integerValue] == SateliteCommandUp) {
+  if ([_lastMove integerValue] == SatelliteCommandUp) {
     return [self S];
-  } else if ([_lastMove integerValue] == SateliteCommandDown) {
+  } else if ([_lastMove integerValue] == SatelliteCommandDown) {
     return;
   }
   
   
-  _lastMove = @(SateliteCommandDown);
-  [self.delegate movementOccured:SateliteCommandDown];
+  _lastMove = @(SatelliteCommandDown);
+  [self.delegate movementOccured:SatelliteCommandDown];
 }
 
 @end

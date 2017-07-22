@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "SateliteLocation.h"
+#import "SatelliteLocation.h"
 
 @protocol MapModelDelegate <NSObject>
 
@@ -21,8 +21,8 @@ typedef void (^completionBlock)(BOOL);
 @interface MapModel : NSObject
 
 @property (nonatomic, strong) NSNumber *id;
-@property (nonatomic, strong) SateliteLocation *myLocation;
-@property (nonatomic, strong) NSArray<SateliteLocation *> *otherLocations;
+@property (nonatomic, strong) SatelliteLocation *myLocation;
+@property (nonatomic, strong) NSArray<SatelliteLocation *> *otherLocations;
 
 @property (nonatomic, strong) id<MapModelDelegate> delegate;
 

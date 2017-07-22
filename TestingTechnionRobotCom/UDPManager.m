@@ -15,7 +15,7 @@
 #import "GCDAsyncUdpSocket.h"
 #import "UDPManager.h"
 #import "NetworkUtils.h"
-#import "SateliteLocation.h"
+#import "SatelliteLocation.h"
 #import "NSDictionary+Utils.h"
 #import "ReceivedPacketModel.h"
 
@@ -24,7 +24,7 @@ typedef NSMutableDictionary<NSNumber *, id<UDPPacketProtocol>> UDPMutableDiction
 @interface UDPManager() <GCDAsyncUdpSocketDelegate>
 
 @property (nonatomic, strong) GCDAsyncUdpSocket *udpSocket;
-@property (nonatomic, strong) NSNumber *intervalTime;
+@property (nonatomic, strong) NSNumber *resendTime;
 @property (nonatomic, strong) UDPMutableDictionary *sentPackets;
 @property (nonatomic, strong) UDPMutableDictionary *receivedPackets;
 @property (nonatomic, strong) NSString *ipAddress;
@@ -53,7 +53,7 @@ static UDPManager *sharedManager;
     sharedManager.udpQueue = dispatch_queue_create([@"udpQueue" cStringUsingEncoding:kCFStringEncodingUTF8], DISPATCH_QUEUE_SERIAL);
     if (sharedManager.udpQueue) {
       sharedManager.udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:sharedManager
-                                                                delegateQueue:sharedManager->_udpQueue];
+                                                              delegateQueue:sharedManager->_udpQueue];
       sharedManager.receivedPackets = [NSMutableDictionary new];
       sharedManager.sentPackets = [NSMutableDictionary new];
       sharedManager.ipAddress = [NetworkUtils getIPAddress];
@@ -76,7 +76,7 @@ static UDPManager *sharedManager;
           debug_varifiedSentPackets,
           sharedManager.ipAddress,
           sharedManager.udpPort,
-          sharedManager.intervalTime];
+          sharedManager.resendTime];
 #endif
   return @"";
 }
@@ -86,18 +86,18 @@ static UDPManager *sharedManager;
 
 +(void)openConnectionForData:(NSString *)ipAddress
                      udpPort:(NSString *)udpPort
-                intervalTime:(NSNumber *)intervalTime
+                  resendTime:(NSNumber *)resendTime
                   completion:(connectionCompletionBlock)completion {
   [[self sharedManager] openConnectionForData:ipAddress
                                       udpPort:udpPort
-                                 intervalTime:intervalTime
+                                   resendTime:resendTime
                                    completion:completion];
 }
 
 
 -(void)openConnectionForData:(NSString *)ipAddress
                      udpPort:(NSString *)udpPort
-                intervalTime:(NSNumber *)intervalTime
+                  resendTime:(NSNumber *)resendTime
                   completion:(connectionCompletionBlock)completion {
   if (_udpSocket != nil){
     NSError *error = nil;
@@ -121,7 +121,7 @@ static UDPManager *sharedManager;
     completion(err);
   }
   
-  _intervalTime = intervalTime;
+  _resendTime = resendTime;
   _udpPort = udpPort;
   _ipAddress = ipAddress;
   completion(nil);
@@ -148,14 +148,14 @@ static UDPManager *sharedManager;
   [_sentPackets setObject:message forKey:key];
   NSData *d = [[message debugDescription] dataUsingEncoding:NSUTF8StringEncoding];
   
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([_intervalTime doubleValue] * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([_resendTime doubleValue]/1000 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 #ifdef NETWORK_LOGS
     NSLog(@"SENDING: <%@, at:%@>", [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding], key);
 #endif
     [_udpSocket sendData:d
                   toHost:_ipAddress
                     port:[_udpPort integerValue]
-             withTimeout:[_intervalTime doubleValue]
+             withTimeout:[_resendTime doubleValue]
                      tag:[key intValue]];
   });
 }
@@ -175,7 +175,7 @@ withFilterContext:(id)filterContext{
     return;
   }
 #ifdef NETWORK_LOGS
-    NSLog(@"Socket receiving data Remote Message:%@",receiveMessage);
+  NSLog(@"Socket receiving data Remote Message:%@",receiveMessage);
 #endif
   if (receiveMessage) {
     ReceivedPacketModel *p = [ReceivedPacketModel newWithJson:receiveMessage];
@@ -185,10 +185,37 @@ withFilterContext:(id)filterContext{
         [_delegate gotPacket:p];
       }
     } else {
-        NSLog(@"Error: Socket receiving data That is not in protocol. data = %@",receiveMessage);
+#ifdef NETWORK_LOGS
+      p = [ReceivedPacketModel newWithJson:@{
+                                             @"myLocation" : @{
+                                                 @"satelliteNumber" : @(4),
+                                                 @"coordinates" : @{
+                                                     @"x" : @(0.2),
+                                                     @"y" : @(0.2),
+                                                     @"degree" : @(M_PI)
+                                                     }
+                                                 },
+                                             @"satelliteLocations" : @[@{
+                                                                         @"satelliteNumber" : @(5),
+                                                                         @"coordinates" : @{
+                                                                             @"x" : @(0.4),
+                                                                             @"y" : @(0.4),
+                                                                             @"degree" : @(M_PI)
+                                                                             },
+                                                                         @"data" : @{
+                                                                             @"xxxx" : @"Porn!"
+                                                                             }
+                                                                         }]
+                                             }];
+      [_receivedPackets setObject:p forKey:p.id];
+      if (_delegate && [_delegate respondsToSelector:@selector(gotPacket:)]) {
+        [_delegate gotPacket:p];
+      }
+#endif
+      NSLog(@"Error: Socket receiving data That is not in protocol. data = %@",receiveMessage);
     }
   }
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([_intervalTime doubleValue] * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     NSError *error = nil;
     [_udpSocket receiveOnce:&error];
   });
@@ -197,12 +224,12 @@ withFilterContext:(id)filterContext{
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag {
   id<UDPPacketProtocol> message = [_sentPackets objectForKey:@(tag)];
 #ifdef NETWORK_LOGS
-    NSLog(@"SENT:<%@, at:%ld>",[message description], tag);
+  NSLog(@"SENT:<%@, at:%ld>",[message description], tag);
 #endif
   if (message) {
     
 #ifdef NETWORK_LOGS
-      [debug_varifiedSentPackets setObject:message forKey:@(tag)];
+    [debug_varifiedSentPackets setObject:message forKey:@(tag)];
 #endif
   } else {
     //Weird.. packet was sent but does not show on our sent packet array..
@@ -213,7 +240,7 @@ withFilterContext:(id)filterContext{
        dueToError:(NSError *)error {
   if (error) {
 #ifdef NETWORK_LOGS
-      NSLog(@"Error sending. tag = %ld", tag);
+    NSLog(@"Error sending. tag = %ld", tag);
 #endif
     if ([_sentPackets objectForKey:@(tag)]) {
       //Retry sending due to error

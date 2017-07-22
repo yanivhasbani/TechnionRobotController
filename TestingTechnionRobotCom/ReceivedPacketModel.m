@@ -8,14 +8,14 @@
 
 #import "ReceivedPacketModel.h"
 #import "ParseJSONProtocol.h"
-#import "SateliteLocation.h"
+#import "SatelliteLocation.h"
 #import "NSArray+JSON.h"
 
 @interface ReceivedPacketModel() <ParseJSONProtocol>
 
 @property (nonatomic, strong) NSNumber *id;
-@property (nonatomic, strong) SateliteLocation *myLocation;
-@property (nonatomic, strong) NSArray<SateliteLocation *> *otherLocations;
+@property (nonatomic, strong) SatelliteLocation *myLocation;
+@property (nonatomic, strong) NSArray<SatelliteLocation *> *otherLocations;
 
 @end
 
@@ -46,11 +46,11 @@
   }
   
   if (!dictionary[@"satelliteLocations"]) {
-    NSLog(@"No other satelites location on object");
+    NSLog(@"No other satellites location on object");
   }
   
   if (![dictionary[@"satelliteLocations"] isKindOfClass:[NSArray class]]) {
-    NSLog(@"Other satelites object is not an array. Obj = %@", dictionary);
+    NSLog(@"Other satellites object is not an array. Obj = %@", dictionary);
   }
   
   return YES;
@@ -62,11 +62,11 @@
   }
   
   ReceivedPacketModel *m = [ReceivedPacketModel new];
-  m.myLocation = [SateliteLocation newWithJson:dictionary[@"myLocation"]];
+  m.myLocation = [SatelliteLocation newWithJson:dictionary[@"myLocation"]];
   
   NSMutableArray *others = [NSMutableArray new];
   for (NSDictionary *d in dictionary[@"satelliteLocations"]) {
-    SateliteLocation *l = [SateliteLocation newWithJson:d];
+    SatelliteLocation *l = [SatelliteLocation newWithJson:d];
     if (l) {
       [others addObject:l];
     }

@@ -39,8 +39,8 @@
   return NO;
 }
 
--(BOOL)isValidRobot {
-  return self.integerValue >= 1 && self.integerValue <= 10;
+-(BOOL)isValidFreq {
+  return self.integerValue >= 0 && self.integerValue <= 10000;
 }
 
 @end
@@ -50,7 +50,7 @@
 @property (nonatomic, assign) NSInteger retryConnection;
 @property (strong, nonatomic) IBOutlet UITextField *ipAddress;
 @property (strong, nonatomic) IBOutlet UITextField *portNumber;
-@property (strong, nonatomic) IBOutlet UITextField *sateliteNumber;
+@property (strong, nonatomic) IBOutlet UITextField *sentFreq;
 
 @end
 
@@ -62,8 +62,8 @@
   _ipAddress.delegate = self;
   _portNumber.returnKeyType = UIReturnKeyDone;
   _portNumber.delegate = self;
-  _sateliteNumber.returnKeyType = UIReturnKeyDone;
-  _sateliteNumber.delegate = self;
+  _sentFreq.returnKeyType = UIReturnKeyDone;
+  _sentFreq.delegate = self;
   
   NSString *ipAddr = [[NSUserDefaults standardUserDefaults] objectForKey:@"myIPAddress"];
   if (ipAddr) {
@@ -75,25 +75,25 @@
     _portNumber.text = udpPort;
   }
   
-  NSString *sateliteNumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"mySateliteNumber"];
-  if (sateliteNumber) {
-    _sateliteNumber.text = sateliteNumber;
+  NSString *sentFreq = [[NSUserDefaults standardUserDefaults] objectForKey:@"mySentFreq"];
+  if (_sentFreq) {
+    _sentFreq.text = sentFreq;
   }
 }
 
 - (IBAction)uiPressed:(UIButton *)sender {
   if (!_ipAddress.text || [_ipAddress.text isEqualToString:@""]||  ![_ipAddress.text isValidIPAddress] ||
       !_portNumber.text || [_portNumber.text isEqualToString:@""] || ![_portNumber.text isValidUDPPort] ||
-      !_sateliteNumber.text || [_sateliteNumber.text isEqualToString:@""] || ![_sateliteNumber.text isValidRobot]) {
+      !_sentFreq.text || [_sentFreq.text isEqualToString:@""] || ![_sentFreq.text isValidFreq]) {
     UIAlertController *a = [UIAlertController newWithTitle:@"Incorrect UDP connection data"
-                                                   message:@"Please fill in a valid ip address, UDP port and robot number"];
+                                                   message:@"Please fill in a valid ip address, UDP port and sent frequency"];
     [self presentViewController:a animated:YES completion:nil];
     return;
   }
   
   [[NSUserDefaults standardUserDefaults] setObject:_ipAddress.text forKey:@"myIPAddress"];
   [[NSUserDefaults standardUserDefaults] setObject:_portNumber.text forKey:@"myUDPPort"];
-  [[NSUserDefaults standardUserDefaults] setObject:_sateliteNumber.text forKey:@"mySateliteNumber"];
+  [[NSUserDefaults standardUserDefaults] setObject:_sentFreq.text forKey:@"mySentFreq"];
   
   [self performSegueWithIdentifier:@"PlayVC" sender:sender];
 }
@@ -109,15 +109,15 @@
   if ([segue.destinationViewController isKindOfClass:[PlayVC class]]) {
     PlayVC *v = (PlayVC *)segue.destinationViewController;
     NSString *buttonText = sender.titleLabel.text;
-    if ([buttonText.lowercaseString containsString:@"gyro"]) {
-      v.segueData = UITypeGyro;
+    if ([buttonText.lowercaseString containsString:@"acceleratorui"]) {
+      v.segueData = UITypeAccelerator;
     } else if ([buttonText.lowercaseString containsString:@"joy"]) {
       v.segueData = UITypeJoystick;
     }
     
     v.udpPort = _portNumber.text;
     v.ipAddress = _ipAddress.text;
-    v.sateliteNumber = @(_sateliteNumber.text.integerValue);
+    v.sentFreq = @(_sentFreq.text.integerValue);
   }
 }
 

@@ -70,7 +70,6 @@ const float threshold = 0.9f;
   }
   
   if (ABS(roundX) > threshold) {
-    NSLog(@"X: %f", roundX);
     if (roundX > 0) {
       [self.delegate U];
     } else {
@@ -86,7 +85,6 @@ const float threshold = 0.9f;
   
   
   if (ABS(roundY) > threshold) {
-    NSLog(@"Y: %f", roundY);
     if (roundY > 0) {
       [self.delegate L];
     } else {

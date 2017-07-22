@@ -10,6 +10,4 @@
 
 @interface CustomCommandVC : UIViewController
 
-
-@property (nonatomic, strong) NSNumber *sateliteNumber;
 @end

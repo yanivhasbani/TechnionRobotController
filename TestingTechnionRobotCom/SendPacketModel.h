@@ -12,7 +12,7 @@
 
 @interface SendPacketModel : NSObject<UDPPacketProtocol>
 
-+(instancetype)newWithMessage:(NSString *)message sateliteNumber:(NSNumber *)sateliteNumber;
++(instancetype)newWithMessage:(NSString *)message;
 
 -(NSDictionary *)generatePacket;
 

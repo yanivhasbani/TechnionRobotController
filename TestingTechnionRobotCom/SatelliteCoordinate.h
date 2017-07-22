@@ -1,5 +1,5 @@
 //
-//  SateliteCoordinate.h
+//  SatelliteCoordinate.h
 //  TestingTechnionRobotCom
 //
 //  Created by Yaniv Hasbani on 6/30/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SateliteCoordinate : NSObject
+@interface SatelliteCoordinate : NSObject
 
 @property (nonatomic, assign) double x;
 @property (nonatomic, assign) double y;

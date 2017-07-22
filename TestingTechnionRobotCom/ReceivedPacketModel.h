@@ -10,7 +10,7 @@
 
 #import "udpPacketProtocol.h"
 
-@class SateliteLocation;
+@class SatelliteLocation;
 @interface ReceivedPacketModel : NSObject<UDPPacketProtocol>
 
 +(instancetype)newWithJson:(NSDictionary *)dictionary;

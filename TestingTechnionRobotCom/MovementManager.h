@@ -11,7 +11,7 @@
 
 @protocol MovementDelegate <NSObject>
 
--(void)movementOccured:(SateliteCommand)cmd;
+-(void)movementOccured:(SatelliteCommand)cmd;
 
 @end
 

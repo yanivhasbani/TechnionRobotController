@@ -14,7 +14,7 @@
 
 @interface SendPacketModel() <ParseJSONProtocol>
 
-@property (nonatomic, strong) NSNumber *sateliteNumber;
+@property (nonatomic, strong) NSNumber *sentFreq;
 @property (nonatomic, strong) NSString *message;
 
 @end
@@ -27,7 +27,6 @@ static NSHashTable *debug_packetGenerated;
 
 -(NSDictionary *)json {
   return @{
-           @"satelliteNumber" : _sateliteNumber ? : [NSNull null],
            @"ipAddress" : [NetworkUtils getIPAddress] ? : [NSNull null],
            @"message" : _message ? : [NSNull null]
            };
@@ -56,13 +55,12 @@ static NSHashTable *debug_packetGenerated;
 #endif
   
   return @{
-           @"satelliteNumber" : _sateliteNumber ? : [NSNull null],
            @"ipAddress" : [NetworkUtils getIPAddress] ? : [NSNull null],
            @"message" : _message ? : [NSNull null]
            };
 }
 
-+(instancetype)newWithMessage:(NSString *)message sateliteNumber:(NSNumber *)sateliteNumber {
++(instancetype)newWithMessage:(NSString *)message {
 #ifdef NETWORK_LOGS
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
@@ -73,7 +71,6 @@ static NSHashTable *debug_packetGenerated;
   SendPacketModel *p = [SendPacketModel new];
   
   p.message = message;
-  p.sateliteNumber = sateliteNumber;
   
   return p;
 }

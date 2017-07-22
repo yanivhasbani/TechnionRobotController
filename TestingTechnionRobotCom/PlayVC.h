@@ -11,14 +11,14 @@
 @interface PlayVC : UIViewController
 
 typedef NS_ENUM(NSUInteger, UIType) {
-  UITypeGyroNone = 0,
-  UITypeGyro = 1,
+  UITypeNone = 0,
+  UITypeAccelerator = 1,
   UITypeJoystick = 2
 };
 
 @property (nonatomic, assign) UIType segueData;
 @property (nonatomic, strong) NSString *ipAddress;
 @property (nonatomic, strong) NSString *udpPort;
-@property (nonatomic, strong) NSNumber *sateliteNumber;
+@property (nonatomic, strong) NSNumber *sentFreq;
 
 @end
