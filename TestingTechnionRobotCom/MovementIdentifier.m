@@ -19,7 +19,7 @@
 @implementation MovementIdentifier
 
 static MovementIdentifier* sharedMovementIdentifier;
-const float gyroInterval = 0.25f;
+const float accelerationInterval = 0.25f;
 const float threshold = 0.9f;
 
 -(instancetype)init {
@@ -31,18 +31,17 @@ const float threshold = 0.9f;
 }
 
 -(void)start {
-  //Gyroscope
-  if([self.motionManager isGyroAvailable])
+  if([self.motionManager isAccelerometerAvailable])
   {
-    /* Start the gyroscope if it is not active already */
-    if([self.motionManager isGyroActive] == NO)
+    /* Start the accelerometer if it is not active already */
+    if([self.motionManager isAccelerometerActive] == NO)
     {
       /* Update us 2 times a second */
-      [self.motionManager setGyroUpdateInterval:gyroInterval];
+      [self.motionManager setAccelerometerUpdateInterval:accelerationInterval];
       
       /* Add on a handler block object */
       
-      /* Receive the gyroscope data on this block */
+      /* Receive the accelerometer data on this block */
       __weak MovementIdentifier *weakSelf = self;
       [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData * _Nullable accData, NSError * _Nullable error) {
           [weakSelf handleMovement:accData.acceleration.x y:accData.acceleration.y];
@@ -52,7 +51,7 @@ const float threshold = 0.9f;
   }
   else
   {
-    NSLog(@"Gyroscope not Available!");
+    NSLog(@"Accelerometer not Available!");
   }
 }
 

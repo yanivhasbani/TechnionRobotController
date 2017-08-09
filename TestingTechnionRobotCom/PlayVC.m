@@ -54,32 +54,16 @@ static UIType savedSate;
 
 -(void)setUiType:(UIType)type {
   if (type == UITypeAccelerator) {
-    //Start Gyro measurement
+    //Start Accelerometer measurement
     [self.view removeSwipeGestures];
     [self.view removeTapGestures];
     self.view.gestureDelegate = nil;
-    [self startGyro];
+    [self startAccelerator];
   } else if (type == UITypeJoystick) {
-    [self stopGyro];
-    [self.view addSwipeGestures];
+    [self stopAccelerator];
     self.view.gestureDelegate = self;
+    [self addAllHoldGestures];
   }
-  
-  
-  [_rotateLeft addHoldGesture];
-  [_rotateRight addHoldGesture];
-  _rotateRight.gestureDelegate = self;
-  _rotateLeft.gestureDelegate = self;
-  
-  [_leftArrow addHoldGesture];
-  _leftArrow.gestureDelegate = self;
-  [_rightArrow addHoldGesture];
-  _rightArrow.gestureDelegate = self;
-  [_upArrow addHoldGesture];
-  _upArrow.gestureDelegate = self;
-  [_downArrow addHoldGesture];
-  _downArrow.gestureDelegate = self;
-  
   
   [self showAllButtons];
   [self removeAllAnimations];
@@ -110,8 +94,7 @@ static UIType savedSate;
 
 -(void)viewWillDisappear:(BOOL)animated {
   if (_uiType == UITypeAccelerator) {
-    //Start Gyro measurement
-    [self stopGyro];
+    [self stopAccelerator];
   } else if (_uiType == UITypeJoystick) {
     [self.view removeSwipeGestures];
     [self.view removeTapGestures];
@@ -177,6 +160,22 @@ static UIType savedSate;
   }];
 }
 
+-(void)addAllHoldGestures {
+  [_rotateLeft addHoldGesture];
+  [_rotateRight addHoldGesture];
+  _rotateRight.gestureDelegate = self;
+  _rotateLeft.gestureDelegate = self;
+  
+  [_leftArrow addHoldGesture];
+  _leftArrow.gestureDelegate = self;
+  [_rightArrow addHoldGesture];
+  _rightArrow.gestureDelegate = self;
+  [_upArrow addHoldGesture];
+  _upArrow.gestureDelegate = self;
+  [_downArrow addHoldGesture];
+  _downArrow.gestureDelegate = self;
+}
+
 -(void)hideButtonsExcept:(ButtonType)excludedButton {
   _rightArrow.hidden = YES;
   _upArrow.hidden = YES;
@@ -213,48 +212,24 @@ static UIType savedSate;
 
 #pragma mark -
 #pragma mark Swipe - GestureDelegate
--(void)swipeRight {
+-(void)leftPressed {
   [self.view addTapGestures];
-  [self.view removeSwipeGestures];
-  
-  //  [self hideButtonsExcept:ButtonTypeLeft];
-  
   [self sendNextCommandToSatellite:SatelliteCommandLeft];
-  
-  //  [_leftArrow shakeLeftArrow];
 }
 
--(void)swipeLeft {
+-(void)rightPressed {
   [self.view addTapGestures];
-  [self.view removeSwipeGestures];
-  
-  //  [self hideButtonsExcept:ButtonTypeRight];
-  
   [self sendNextCommandToSatellite:SatelliteCommandRight];
-  
-  //  [_rightArrow shakeRightArrow];
 }
 
--(void)swipeUp {
+-(void)upPressed {
   [self.view addTapGestures];
-  [self.view removeSwipeGestures];
-  
-  //  [self hideButtonsExcept:ButtonTypeUp];
-  
   [self sendNextCommandToSatellite:SatelliteCommandUp];
-  
-  //  [_upArrow shakeUpArrow];
 }
 
--(void)swipeDown {
+-(void)downPressed {
   [self.view addTapGestures];
-  [self.view removeSwipeGestures];
-  
-  //  [self hideButtonsExcept:ButtonTypeDown];
-  
   [self sendNextCommandToSatellite:SatelliteCommandDown];
-  
-  //  [_downArrow shakeDownArrow];
 }
 
 -(void)handleSingleTap:(UIView *)view {
@@ -265,7 +240,6 @@ static UIType savedSate;
     [_leftArrow setUserInteractionEnabled:YES];
     [_rightArrow setUserInteractionEnabled:YES];
     [self removeAllAnimations];
-    [self.view addSwipeGestures];
     
     [self sendNextCommandToSatellite:SatelliteCommandStop];
     
@@ -280,20 +254,17 @@ static UIType savedSate;
     [self sendNextCommandToSatellite:SatelliteCommandRotateRight];
   } else if ([_leftArrow isEqual:sender]) {
     [_leftArrow setUserInteractionEnabled:NO];
-    [self.view removeSwipeGestures];
-    [self swipeRight];
+    [self leftPressed];
   } else if ([_rightArrow isEqual:sender]) {
     [_rightArrow setUserInteractionEnabled:NO];
-    [self.view removeSwipeGestures];
-    [self swipeLeft];
+    [self rightPressed];
   }else if ([_upArrow isEqual:sender]) {
     [_upArrow setUserInteractionEnabled:NO];
-    [self.view removeSwipeGestures];
-    [self swipeUp];
+    [self upPressed];
   }else if ([_downArrow isEqual:sender]) {
     [_downArrow setUserInteractionEnabled:NO];
     [self.view removeSwipeGestures];
-    [self swipeDown];
+    [self downPressed];
   }
 }
 
@@ -302,13 +273,13 @@ static UIType savedSate;
 }
 
 #pragma mark -
-#pragma mark Gyro
--(void)startGyro {
+#pragma mark Accelerator
+-(void)startAccelerator {
   [MovementManager shared].delegate = self;
   [[MovementManager shared] start];
 }
 
--(void)stopGyro {
+-(void)stopAccelerator {
   [[MovementManager shared] stop];
 }
 
@@ -319,7 +290,7 @@ static UIType savedSate;
   __block SatelliteCommand blockCMD = cmd;
   _currentMovementID = blockCurrent;
   [self sendNextCommandToSatellite:cmd];
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([_sentFreq doubleValue]/1000 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     if (blockCurrent == _currentMovementID) {
       if (blockCMD != SatelliteCommandStop) {
         [self repeatinglySend:blockCMD];

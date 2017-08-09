@@ -10,6 +10,7 @@
 #import "DetailsVC.h"
 #import "SatelliteLocation.h"
 #import "SatelliteCoordinate.h"
+#import "SatelliteDetailsCell.h"
 
 @interface DetailsVC ()
 
@@ -17,6 +18,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *xLabel;
 @property (strong, nonatomic) IBOutlet UILabel *yLabel;
 @property (strong, nonatomic) IBOutlet UILabel *degreeLabel;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@end
+
+@interface DetailsVC() <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -39,6 +45,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+  self.tableView.delegate = self;
+  self.tableView.dataSource = self;
   [self updateUI:_model];
 }
 
@@ -59,12 +67,53 @@
   _degreeLabel.text = [NSString stringWithFormat:@"%.02f", celsius];
 }
 
-- (IBAction)backButtonPressed:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)listButtonPressed:(id)sender {
+  [self.tableView reloadData];
+  self.tableView.hidden = NO;
 }
 
 - (IBAction)mapButtonPressed:(id)sender {
-  [self.parentViewController.parentViewController dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+@synthesize dataModel = _dataModel;
+
+-(NSArray<SatelliteLocation *> *)dataModel {
+  return _dataModel;
+}
+
+-(void)setDataModel:(NSArray *)dataModel {
+  _dataModel = [dataModel copy];
+  [self.tableView reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  
+  return [self.dataModel count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  SatelliteDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailsCell"
+                                                               forIndexPath:indexPath];
+  [cell updateUI:_dataModel[indexPath.row]];
+  
+  return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  SatelliteLocation *sl = self.dataModel[indexPath.row];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [UIView animateWithDuration:0.1 animations:^{
+      self.model = sl;
+      self.tableView.hidden = true;
+    }];
+  });
+}
+
 
 @end

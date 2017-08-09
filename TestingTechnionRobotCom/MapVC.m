@@ -8,8 +8,8 @@
 //
 
 #import "MapVC.h"
-#import "SplitVC.h"
 #import "MapModel.h"
+#import "DetailsVC.h"
 #import "MyMapView.h"
 #import "UDPManager.h"
 #import "UIView+Gestures.h"
@@ -77,16 +77,17 @@
 #pragma mark LogButton
 - (IBAction)logButtonPressed:(id)sender {
   NSArray *satellitelocations = [_mapView getAllSatelliteLocations];
-  [self performSegueWithIdentifier:@"SplitVC" sender:satellitelocations];
+  [self performSegueWithIdentifier:@"LogVC" sender:satellitelocations];
 }
 
 
 #pragma mark -
 #pragma mark Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSArray<SatelliteLocation *> *)model {
-  if ([segue.destinationViewController isKindOfClass:[SplitVC class]]) {
-    SplitVC *vc = (SplitVC *)segue.destinationViewController;
-    vc.model = model;
+  if ([segue.destinationViewController isKindOfClass:[DetailsVC class]]) {
+    DetailsVC *vc = (DetailsVC *)segue.destinationViewController;
+    vc.dataModel = model;
+    vc.model = [model firstObject];
   }
 }
 

@@ -148,16 +148,14 @@ static UDPManager *sharedManager;
   [_sentPackets setObject:message forKey:key];
   NSData *d = [[message debugDescription] dataUsingEncoding:NSUTF8StringEncoding];
   
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([_resendTime doubleValue]/1000 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 #ifdef NETWORK_LOGS
-    NSLog(@"SENDING: <%@, at:%@>", [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding], key);
+  NSLog(@"SENDING: <%@, at:%@>", [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding], key);
 #endif
-    [_udpSocket sendData:d
-                  toHost:_ipAddress
-                    port:[_udpPort integerValue]
-             withTimeout:[_resendTime doubleValue]
-                     tag:[key intValue]];
-  });
+  [_udpSocket sendData:d
+                toHost:_ipAddress
+                  port:[_udpPort integerValue]
+           withTimeout:[_resendTime doubleValue]
+                   tag:[key intValue]];
 }
 
 #pragma mark -
@@ -185,33 +183,33 @@ withFilterContext:(id)filterContext{
         [_delegate gotPacket:p];
       }
     } else {
-#ifdef NETWORK_LOGS
-      p = [ReceivedPacketModel newWithJson:@{
-                                             @"myLocation" : @{
-                                                 @"satelliteNumber" : @(4),
-                                                 @"coordinates" : @{
-                                                     @"x" : @(0.2),
-                                                     @"y" : @(0.2),
-                                                     @"degree" : @(M_PI)
-                                                     }
-                                                 },
-                                             @"satelliteLocations" : @[@{
-                                                                         @"satelliteNumber" : @(5),
-                                                                         @"coordinates" : @{
-                                                                             @"x" : @(0.4),
-                                                                             @"y" : @(0.4),
-                                                                             @"degree" : @(M_PI)
-                                                                             },
-                                                                         @"data" : @{
-                                                                             @"xxxx" : @"Porn!"
-                                                                             }
-                                                                         }]
-                                             }];
-      [_receivedPackets setObject:p forKey:p.id];
-      if (_delegate && [_delegate respondsToSelector:@selector(gotPacket:)]) {
-        [_delegate gotPacket:p];
-      }
-#endif
+//#ifdef NETWORK_LOGS
+//      p = [ReceivedPacketModel newWithJson:@{
+//                                             @"myLocation" : @{
+//                                                 @"satelliteNumber" : @(4),
+//                                                 @"coordinates" : @{
+//                                                     @"x" : @(0.2),
+//                                                     @"y" : @(0.2),
+//                                                     @"degree" : @(M_PI)
+//                                                     }
+//                                                 },
+//                                             @"satelliteLocations" : @[@{
+//                                                                         @"satelliteNumber" : @(5),
+//                                                                         @"coordinates" : @{
+//                                                                             @"x" : @(0.4),
+//                                                                             @"y" : @(0.4),
+//                                                                             @"degree" : @(M_PI)
+//                                                                             },
+//                                                                         @"data" : @{
+//                                                                             @"xxxx" : @"Porn!"
+//                                                                             }
+//                                                                         }]
+//                                             }];
+//      [_receivedPackets setObject:p forKey:p.id];
+//      if (_delegate && [_delegate respondsToSelector:@selector(gotPacket:)]) {
+//        [_delegate gotPacket:p];
+//      }
+//#endif
       NSLog(@"Error: Socket receiving data That is not in protocol. data = %@",receiveMessage);
     }
   }
