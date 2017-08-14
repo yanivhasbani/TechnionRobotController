@@ -1,0 +1,47 @@
+PlayScreen;
+OpenUDPConnection;
+segmantationByUIType;
+SetUIType() {
+  switch (uiType) {
+    case Accelerator:
+      stopAllGesturesForButtons;
+      start accelerator;
+      break;
+    case Joystick:
+      stop accelerator;
+      setAllGesturesForButtons;
+      break;
+  }
+}
+while(waitForChange) {
+  switch(changeType) {
+    case UserChangeRobotState:
+      switch(_UIType) {
+        case Accelerator:
+          AnimateThatDirection;
+          AddTapToGoBack;
+          while(notBack) {
+            SendCommandToServer(Every 500ms);
+          }
+          break;
+        case Joystick:
+          while (stillPressed) {
+            sendCommandToServer
+            wait(500ms);
+          }
+          break;
+      }
+      break;
+    case UserChangedUIType:
+      SetUIType();
+      break;
+    case MapScreen:
+      presentMapScreen();
+      return;
+    case CustomCommandScreen:
+      presentCustomCommandScreen();
+      return;
+  }
+};
+
+

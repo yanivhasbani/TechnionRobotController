@@ -1,0 +1,16 @@
+MapVC() {
+  LoadCurrentLocations();
+  while(waitForAction) {
+    switch (action) {
+      case Back:
+        LoadPlayVC();
+        break;  
+      case NewLocation:
+        displayLocation();  
+        break;
+      case Log:
+        passLastLoctionToLog();
+        displayLogVC();
+    }
+  }
+}

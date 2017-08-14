@@ -1,0 +1,17 @@
+LogVC() {
+  DisplayTableWithAllSatelitesInfo();
+  DisplayFirstLocation();
+  while(waitForUserChoice) {
+    switch(action) {
+      case UserChoseSatelite:
+        DisplayChosenLocation();
+        break;
+      case Map:
+        DisplayMapVC();
+        break;
+      case Arrow:
+        DisplayTableOfSateliteInfos();
+        break;
+    }
+  }
+}

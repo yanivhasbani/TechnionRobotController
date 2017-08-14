@@ -1,0 +1,21 @@
+CustomCommandScreen() {
+  while (firstTime) {
+    num = getCachedNumberOfCommands();
+    //Wait for user input
+    displayTextFeildWithCachedNum();
+    numOfCommands = UserInput();
+    break;
+  }
+  
+  DisplayButtonsBy(numOfCommands);
+  while(waitForChange) {
+    switch(changeType) {
+      case ButtonPressed:
+        sendCommandToServer();
+        break;
+      case BackPressed:
+        removeCustomCommandScreen();
+        return;
+    }
+  }
+}
