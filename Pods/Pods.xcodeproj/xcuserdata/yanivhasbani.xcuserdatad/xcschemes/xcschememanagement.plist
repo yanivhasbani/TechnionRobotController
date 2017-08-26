@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CocoaAsyncSocket.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-TestingTechnionRobotCom.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-TestingTechnionRobotComTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-TestingTechnionRobotComUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>09910A0FE44299E762A4823F3F857C04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40751EA11DAC76A50CC6779479D6408F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9378937AEBAEEF23B7804048824C6CFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB67DAFA4CF6DD066A449F51989DAFCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -48,6 +48,7 @@
 		79FF4A121EFEC6F8002D394D /* UIView+ShakeProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */; };
 		8A440FA73498E215D2DCCA82 /* Pods_TestingTechnionRobotComTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EE39AA45CCCD89B5C7ED71 /* Pods_TestingTechnionRobotComTests.framework */; };
 		BADB8A6BB1253398205D35B4 /* Pods_TestingTechnionRobotComUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6028016D59A8C8B1D1D512B /* Pods_TestingTechnionRobotComUITests.framework */; };
+		D6C3F8931F51A4D80025487F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C3F8921F51A4D80025487F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		79FF4A111EFEC6F8002D394D /* UIView+ShakeProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ShakeProtocol.m"; sourceTree = "<group>"; };
 		8740A9CCB5EFF8A79CF2ECB3 /* Pods-TestingTechnionRobotComUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotComUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotComUITests/Pods-TestingTechnionRobotComUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C6028016D59A8C8B1D1D512B /* Pods_TestingTechnionRobotComUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C3F8921F51A4D80025487F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6EE39AA45CCCD89B5C7ED71 /* Pods_TestingTechnionRobotComTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingTechnionRobotComTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F502FC7607D21C59DF2B9429 /* Pods-TestingTechnionRobotCom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingTechnionRobotCom.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingTechnionRobotCom/Pods-TestingTechnionRobotCom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -376,6 +378,7 @@
 				799785941F096D810017905E /* UIAlertController+MyAlertController.m */,
 				7930B6F91F235DD2008261C6 /* SatelliteDetailsCell.h */,
 				7930B6FA1F235DD2008261C6 /* SatelliteDetailsCell.m */,
+				D6C3F8921F51A4D80025487F /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -518,7 +521,7 @@
 				TargetAttributes = {
 					791E6F4F1DE1978200E6E431 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = SG9V4Q96YZ;
+						DevelopmentTeam = 6EQ2C96FBY;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -560,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7974E3FC1E58A2720064F720 /* Main.storyboard in Resources */,
+				D6C3F8931F51A4D80025487F /* LaunchScreen.storyboard in Resources */,
 				792321D41F0A9A3500B352E5 /* Satellite.xib in Resources */,
 				79B919681F0CE6FE00EFE823 /* assets.xcassets in Resources */,
 			);
@@ -893,11 +897,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
-				DEVELOPMENT_TEAM = SG9V4Q96YZ;
+				DEVELOPMENT_TEAM = 6EQ2C96FBY;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Technion.RobotController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yanivcorp.robocom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -910,11 +914,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
-				DEVELOPMENT_TEAM = SG9V4Q96YZ;
+				DEVELOPMENT_TEAM = 6EQ2C96FBY;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Technion.RobotController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yanivcorp.robocom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
