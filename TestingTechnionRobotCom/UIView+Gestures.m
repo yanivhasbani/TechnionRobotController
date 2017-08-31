@@ -12,6 +12,7 @@
 static NSMutableArray *mySwipeGestures;
 static NSMutableArray *myTapGestures;
 static NSTimer *timer;
+static NSNumber *frequency;
 
 @implementation UIView (Gestures)
 
@@ -25,10 +26,11 @@ static NSTimer *timer;
   objc_setAssociatedObject(self, @selector(gestureDelegate), gestureDelegate, OBJC_ASSOCIATION_RETAIN);
 }
 
--(void)addHoldGesture {
+-(void)addHoldGesture:(NSNumber *)freq {
   if (![self isKindOfClass:[UIButton class]]) {
     return;
   }
+  frequency = [NSNumber numberWithFloat:freq.doubleValue / 1000 ];
   
   UIButton *b = (UIButton *)self;
   [b addTarget:self action:@selector(holdDown) forControlEvents:UIControlEventTouchDown];
@@ -122,7 +124,7 @@ static NSTimer *timer;
 
 -(void)holdDown {
   if (!timer) {
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(handleHold:) userInfo:self repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:frequency.floatValue target:self selector:@selector(handleHold:) userInfo:self repeats:YES];
   }
 }
 

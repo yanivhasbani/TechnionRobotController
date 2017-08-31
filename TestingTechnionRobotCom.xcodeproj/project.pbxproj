@@ -896,7 +896,6 @@
 			baseConfigurationReference = 39FEF7053956632E830BF108 /* Pods-TestingTechnionRobotCom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
 				DEVELOPMENT_TEAM = 6EQ2C96FBY;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -913,7 +912,6 @@
 			baseConfigurationReference = F502FC7607D21C59DF2B9429 /* Pods-TestingTechnionRobotCom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
 				DEVELOPMENT_TEAM = 6EQ2C96FBY;
 				INFOPLIST_FILE = TestingTechnionRobotCom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

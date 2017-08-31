@@ -62,7 +62,7 @@ static UIType savedSate;
   } else if (type == UITypeJoystick) {
     [self stopAccelerator];
     self.view.gestureDelegate = self;
-    [self addAllHoldGestures];
+    [self addAllHoldGestures:_sentFreq];
   }
   
   [self showAllButtons];
@@ -160,19 +160,19 @@ static UIType savedSate;
   }];
 }
 
--(void)addAllHoldGestures {
-  [_rotateLeft addHoldGesture];
-  [_rotateRight addHoldGesture];
+-(void)addAllHoldGestures:(NSNumber *)freq {
+  [_rotateLeft addHoldGesture:freq];
+  [_rotateRight addHoldGesture:freq];
   _rotateRight.gestureDelegate = self;
   _rotateLeft.gestureDelegate = self;
   
-  [_leftArrow addHoldGesture];
+  [_leftArrow addHoldGesture:freq];
   _leftArrow.gestureDelegate = self;
-  [_rightArrow addHoldGesture];
+  [_rightArrow addHoldGesture:freq];
   _rightArrow.gestureDelegate = self;
-  [_upArrow addHoldGesture];
+  [_upArrow addHoldGesture:freq];
   _upArrow.gestureDelegate = self;
-  [_downArrow addHoldGesture];
+  [_downArrow addHoldGesture:freq];
   _downArrow.gestureDelegate = self;
 }
 

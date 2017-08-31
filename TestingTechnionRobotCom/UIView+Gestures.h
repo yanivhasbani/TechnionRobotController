@@ -34,7 +34,7 @@
 
 @property (nonatomic, strong) id<GestureDelegate> gestureDelegate;
 
--(void)addHoldGesture;
+-(void)addHoldGesture:(NSNumber *)freq;
 -(void)removeHoldGesture;
 
 -(void)addSwipeGestures;
